@@ -4,7 +4,9 @@ using Dapper;
 using SixLabors.ImageSharp.ColorSpaces;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.IO;
+using System.Net.Sockets;
 using System.Text;
 using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration;
@@ -29,6 +31,7 @@ namespace Aplicatie_Scanner
 
         private void Frm_Dashboard_Load(object sender, EventArgs e)
         {
+            SetcalendarToDefault();
             cbZonaSelectie.SelectedIndex = 0;
         }
 
@@ -53,45 +56,63 @@ namespace Aplicatie_Scanner
         {
             bool Prima_Conditie_Selectata = false;
             string Conditii_Get_Date = "";
-            if (checkBoxCalitate.Checked || checkBoxFurnizor.Checked)
-            { Conditii_Get_Date = "WHERE"; }
 
-            if (checkBoxFurnizor.Checked)
+            if (checkBoxIntervalOrar.Checked && !CheckBoxReceptie.Checked)
             {
-                if (!Prima_Conditie_Selectata)
-                {
-                    Conditii_Get_Date = Conditii_Get_Date + $" Furnizor = '{cbFurnizor.SelectedItem.ToString()}'";
-                    Prima_Conditie_Selectata=true;
-                }
-                
+                SetcalendarToInterval();
             }
+            else SetcalendarBack();
 
-            if (checkBoxCalitate.Checked)
+
+            if (!CheckBoxReceptie.Checked)
             {
-                if (!Prima_Conditie_Selectata)
+                if (checkBoxFurnizor.Checked)
                 {
-                    Conditii_Get_Date = Conditii_Get_Date + $" Calitate = '{cbCalitate.SelectedItem.ToString()}'";
+                    Conditii_Get_Date = Conditii_Get_Date + $" AND Furnizor = '{cbFurnizor.SelectedItem.ToString()}'";
                     Prima_Conditie_Selectata = true;
                 }
-                else
-                Conditii_Get_Date = Conditii_Get_Date + $" AND Calitate = '{cbCalitate.SelectedItem.ToString()}'";
-            }
-            
-            try
-            {
-               
-                DataAccess db = new DataAccess();
-                date = db.GetDateToataZiua(newCalendar1.SelectionStart, newCalendar1.SelectionEnd,Conditii_Get_Date,cbZonaSelectie.SelectedItem.ToString().Replace(" ","_"));
 
-                UpdateBinding();
-                if (date.Count < 1) MessageBox.Show("Nu a fost gasit niciun produs !");
-                else btnPrintCSV.Visible = true;
-                    
-            }
-            catch
-            {
+                if (checkBoxCalitate.Checked)
+                {
+                    Conditii_Get_Date = Conditii_Get_Date + $" AND Calitate = '{cbCalitate.SelectedItem.ToString()}'";
+                }
 
+                try
+                {
+
+                    DataAccess db = new DataAccess();
+                    date = db.GetDateToataZiua(newCalendar1.SelectionStart, newCalendar1.SelectionEnd, Conditii_Get_Date, cbZonaSelectie.SelectedItem.ToString().Replace(" ", "_"));
+
+                    UpdateBinding();
+                    if (date.Count < 1) MessageBox.Show("Nu a fost gasit niciun produs !");
+                    else btnPrintCSV.Visible = true;
+
+                }
+                catch
+                {
+
+                }
             }
+            else
+            {
+                try
+                {
+
+                    DataAccess db = new DataAccess();
+                    date = db.GetDateReceptie(tbReceptie.Text);
+
+                    UpdateBinding();
+                    if (date.Count < 1) MessageBox.Show("Nu a fost gasit niciun produs !");
+                    else btnPrintCSV.Visible = true;
+
+                }
+                catch
+                {
+
+                }
+            }
+
+
         }
 
         private void UpdateBinding()
@@ -101,22 +122,23 @@ namespace Aplicatie_Scanner
             try
             {
                 dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.DataSource = date;
+                dataGridView1.DataSource = date;
 
                 dataGridView1.Columns["Data"].DataPropertyName = "DoarData";
                 dataGridView1.Columns["Timp"].DataPropertyName = "DoarTimp";
                 dataGridView1.Columns["Locatie_Actuala"].DataPropertyName = "Locatie_Actuala";
                 dataGridView1.Columns["Furnizor"].DataPropertyName = "Furnizor";
                 dataGridView1.Columns["Numar_Aviz"].DataPropertyName = "Numar_Aviz";
-                dataGridView1.Columns["Numar_Bucati"].DataPropertyName = "Numar_Bucati";
                 dataGridView1.Columns["Numar_Receptie"].DataPropertyName = "Numar_Receptie";
+                dataGridView1.Columns["Numar_Bustean"].DataPropertyName = "Numar_Bustean";
                 dataGridView1.Columns["Lungime"].DataPropertyName = "Lungime";
-                dataGridView1.Columns["Diametru"].DataPropertyName = "Diametru";
+                dataGridView1.Columns["Diametru_Net"].DataPropertyName = "Diametru_Brut";
                 dataGridView1.Columns["Calitate"].DataPropertyName = "Calitate";
+                dataGridView1.Columns["Data_Transfer"].DataPropertyName = "Data_Transfer";
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message); 
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -145,7 +167,7 @@ namespace Aplicatie_Scanner
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: " + ex.Message);     
+                    MessageBox.Show("Error: " + ex.Message);
                 }
             }
             if (!checkBoxFurnizor.Checked)
@@ -171,18 +193,77 @@ namespace Aplicatie_Scanner
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
-            } 
+            }
             if (!checkBoxCalitate.Checked)
                 cbCalitate.Visible = false;
         }
+        private void SetcalendarToInterval()
+        {
+            DateTime start = new DateTime(newCalendar1.SelectionStart.Year
+            , newCalendar1.SelectionStart.Month
+            , newCalendar1.SelectionStart.Day
+            , (int)numericUpDownStart.Value, 0, 0); //// Time
 
+            DateTime end = new DateTime(newCalendar1.SelectionEnd.Year
+                , newCalendar1.SelectionEnd.Month
+                , newCalendar1.SelectionEnd.Day
+                , (int)numericUpDownEnd.Value, 0, 0); //// Time
+
+            newCalendar1.SelectionStart = start;
+            newCalendar1.SelectionEnd = end;
+        }
+
+        private void SetcalendarToDefault()
+        {
+            DateTime d_final = DateTime.Now;
+            d_final.AddDays(1);
+            d_final = d_final.AddTicks(-1);
+            newCalendar1.SelectionStart = DateTime.Today;
+            newCalendar1.SelectionEnd = d_final;
+        }
+        private void SetcalendarBack()
+        {
+            DateTime start = new DateTime(newCalendar1.SelectionStart.Year
+            , newCalendar1.SelectionStart.Month
+            , newCalendar1.SelectionStart.Day
+            , 0, 0, 0); //// Time
+
+            DateTime end = new DateTime(newCalendar1.SelectionEnd.Year
+                , newCalendar1.SelectionEnd.Month
+                , newCalendar1.SelectionEnd.Day
+                , 23, 59, 59); //// Time
+
+            newCalendar1.SelectionStart = start;
+            newCalendar1.SelectionEnd = end;
+        }
+        private void checkBoxIntervalOrar_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxIntervalOrar.Checked)
+            {
+
+                numericUpDownStart.Enabled = true;
+                numericUpDownEnd.Enabled = true;
+
+
+            }
+            else
+            {
+                numericUpDownStart.Enabled = false;
+                numericUpDownEnd.Enabled = false;
+            }
+        }
         private void cbZonaSelectie_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
 
+
         private void btnPrintCSV_Click(object sender, EventArgs e)
         {
-            string subPath = @$"C:\Azel\Raportari Romply\"; 
+            String Cantitate_Lemn_Foc = "";
+
+            ShowInputDialog(ref Cantitate_Lemn_Foc);
+
+            string subPath = @$"C:\Azel\Raportari Romply\";
 
             bool exists = System.IO.Directory.Exists(subPath);
 
@@ -190,11 +271,120 @@ namespace Aplicatie_Scanner
                 System.IO.Directory.CreateDirectory(subPath);
             using (StreamWriter file = File.CreateText(@$"C:\Azel\Raportari Romply\Raport_Aplicatie_{DateTime.Now.ToString("yyyy-MM-dd_HH-mm")}.csv"))
             {
+                if (CheckBoxReceptie.Checked) file.WriteLine($"Numar Receptie,{tbReceptie.Text},,,,,,,,,,,");
+
+                file.WriteLine("Data,Ora,Furnizor,Numar Aviz,Numar Receptie,Numar Bustean,Lungime,Diametru Net,Volum Net,Volum Brut,Calitate,Locatie Actuala,Comentariu,Data Transfer");
                 foreach (var arr in date)
                 {
                     file.WriteLine(string.Join(",", arr.FullString));
                 }
+                file.WriteLine($",,,,,,,,,,,,");
+                file.WriteLine($",,,,NUMAR BUSTEAN CATARG:,{date.Select(i => i.Numar_Bustean).Distinct().Count()},,,,,,,");
+                file.WriteLine($",,,,,,,,,,,,");
+                file.WriteLine("Cantitati,Calitate,Lungime,Numar Bucati,Volum Net,Volum Brut,,,,,,,");
+                foreach (var line in date.GroupBy(info => new { info.Lungime, info.Calitate })
+                        .Select(group => new
+                        {
+                            Lungime = group.Key.Lungime,
+                            Calitate = group.Key.Calitate,
+                            Count = group.Count(),
+                            Volum_Net = group.Sum(i => i.Volum_Net).ToString(),
+                            Volum_Brut = group.Sum(i => i.Volum_Brut).ToString(),
+                        })
+                        .OrderBy(x => x.Calitate))
+                {
+                    file.WriteLine($",{line.Calitate},{line.Lungime},{line.Count.ToString()},{line.Volum_Net},{line.Volum_Brut}");
+                }
+                file.WriteLine($",,Total:,{date.Count()},{Math.Round(date.Select(i => i.Volum_Net).Sum(), 3)},{Math.Round(date.Select(i => i.Volum_Brut).Sum(), 3)},,,,,,,");
+                file.WriteLine(",,,,,,,,,,,,");
+                file.WriteLine($"Volum Total Furnir (MC): " +
+                    $",{Math.Round(date.Where(i => i.Calitate == "Furnir" || i.Calitate == "Furnir A").Sum(i => i.Volum_Net), 4)}" +
+                    ",Nr Bucati: " +
+                    $",{date.Where(i => i.Calitate == "Furnir" || i.Calitate == "Furnir A").Count()}" +
+                    "\nVolum Total Gater (MC): " +
+                    $",{Math.Round(date.Where(i => i.Calitate == "Gater").Sum(i => i.Volum_Net), 4)}" +
+                    ",Nr Bucati: " +
+                    $",{date.Where(i => i.Calitate == "Gater").Count()}" +
+                    $"\nVolum Lemn Foc: " +
+                    $",{Cantitate_Lemn_Foc}");
+
             }
         }
+
+        private void CheckBoxReceptie_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CheckBoxReceptie.Checked)
+            {
+                checkBoxCalitate.Enabled = false;
+                checkBoxFurnizor.Enabled = false;
+                cbZonaSelectie.Enabled = false;
+                newCalendar1.Enabled = false;
+                tbReceptie.Visible = true;
+                cbFurnizor.Enabled = false;
+                cbCalitate.Enabled = false;
+                checkBoxIntervalOrar.Enabled = false;
+                checkBoxIntervalOrar.Checked = false;
+
+            }
+            else
+            {
+                checkBoxCalitate.Enabled = true;
+                checkBoxFurnizor.Enabled = true;
+                cbZonaSelectie.Enabled = true;
+                newCalendar1.Enabled = true;
+                tbReceptie.Visible = false;
+                cbFurnizor.Enabled = true;
+                cbCalitate.Enabled = true;
+                checkBoxIntervalOrar.Enabled = true;
+
+            }
+        }
+        private static DialogResult ShowInputDialog(ref string input)
+        {
+            System.Drawing.Size size = new System.Drawing.Size(200, 100);
+            Form inputBox = new Form();
+
+            inputBox.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            inputBox.ClientSize = size;
+            inputBox.Text = "Cantitate Lemn Foc";
+            inputBox.StartPosition = FormStartPosition.CenterParent;
+            inputBox.MinimizeBox = false;
+            inputBox.MaximizeBox = false;
+
+            System.Windows.Forms.TextBox textBox = new TextBox();
+            textBox.Size = new System.Drawing.Size(size.Width - 10, 23);
+            textBox.Location = new System.Drawing.Point(5, 5);
+            textBox.Text = "";
+            inputBox.Controls.Add(textBox);
+
+            System.Windows.Forms.Button okButton = new System.Windows.Forms.Button();
+            okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+            okButton.Name = "okButton";
+            okButton.Size = new System.Drawing.Size(size.Width / 2, 40);
+            okButton.Text = "&Introducere";
+            okButton.Location = new System.Drawing.Point(size.Width / 4, 39);
+            inputBox.Controls.Add(okButton);
+
+            /*  System.Windows.Forms.Button cancelButton = new System.Windows.Forms.Button();
+              cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+              cancelButton.Name = "cancelButton";
+              cancelButton.Size = new System.Drawing.Size(75, 23);
+              cancelButton.Text = "&Cancel";
+              cancelButton.Location = new System.Drawing.Point(size.Width - 80, 39);
+              inputBox.Controls.Add(cancelButton);*/
+
+            inputBox.AcceptButton = okButton;
+            //inputBox.CancelButton = cancelButton;
+
+            DialogResult result = inputBox.ShowDialog();
+            input = textBox.Text;
+            return result;
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
+
 }

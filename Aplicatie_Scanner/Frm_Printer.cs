@@ -38,16 +38,16 @@ namespace Aplicatie_Scanner
             tbNrReceptie.Text = DateTime.Now.ToString("yyMMdd");
             tbDiametruBrut.Text = "40";
             ID = Guid.NewGuid().ToString().Replace("-", "").ToUpper();
-            
+
 
 
         }
         public void Generare_Cod_Bare()
         {
-          
+
             return;
         }
-       
+
         private void AdaugaIntrari(String Comentariu)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ConnStr")))
@@ -99,13 +99,31 @@ namespace Aplicatie_Scanner
         }
         private void button_print_Click(object sender, EventArgs e)
         {
-            if(Receptie_Pornita)
-            Imprimare();
+            if (Receptie_Pornita)
+                Imprimare();
 
 
         }
 
-    private void Imprimare()
+        private double Calcul_Diametru_Net(double diametru)
+        {
+            double output = 0;
+            ////Calcul Automat Diametru NET////
+            if (diametru >= 42)
+            {
+                output = diametru - 3;
+            }
+            else if (diametru > 18 && diametru < 41)
+            {
+                output = diametru - 2;
+            }
+            else
+            {
+                output = diametru;
+            }
+            return output;
+        }
+        private void Imprimare()
         {
 
             ID = Guid.NewGuid().ToString().Replace("-", "").ToUpper();
@@ -122,24 +140,31 @@ namespace Aplicatie_Scanner
                 + "','"
                 + tbNrReceptie.Text
                 + "','"
+                + tbIndexBustean.Text
+                + "','"
                 + lbLungime.Text
                 + "','"
                 + tbDiametruBrut.Text
+                + "','"
+                + Calcul_Diametru_Net(Convert.ToDouble(tbDiametruBrut.Text)).ToString()
                 + "','"
                 + lbCalitate.Text
                 + "','"
                 + ID
                 + "','"
                 + "Etichete_Generate"
-                 + "','"
+                + "','"
                 + rtbComentariu.Text
+                + "','"
+                + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")
                 + "');";
 
 
             Generare_Cod_Bare();
             AdaugaIntrari(CodDeIntrodus);
 
-
+            ////////////////DE STERS IN PRODUCTIE//////////////// La app.config 192.168.170.2
+            //return;
 
             // Printer IP Address and communication port
             string ipAddress = "192.168.170.165";
@@ -172,31 +197,31 @@ eJztVLFu2zAUPNIWIAiGSgHSTnAijADpaGhoGaAfoMH6H0JZBA/9BkKT4QKZjQ5xP0VjkCljkSV9pNXY
 ^FT564,357^A0N,28,28^FH\^FD{tbNrReceptie.Text}^FS
 ^PQ1,0,1,Y^XZ";
 
-                try
-                 {
-                     // Open connection
-                     System.Net.Sockets.TcpClient client = new System.Net.Sockets.TcpClient();
-                     client.Connect(ipAddress, port);
+            try
+            {
+                // Open connection
+                System.Net.Sockets.TcpClient client = new System.Net.Sockets.TcpClient();
+                client.Connect(ipAddress, port);
 
-                     // Write ZPL String to connection
-                     System.IO.StreamWriter writer =
-                     new System.IO.StreamWriter(client.GetStream());
-                     writer.Write(ZPLString);
-                     writer.Flush();
+                // Write ZPL String to connection
+                System.IO.StreamWriter writer =
+                new System.IO.StreamWriter(client.GetStream());
+                writer.Write(ZPLString);
+                writer.Flush();
 
-                     // Close Connection
-                     writer.Close();
-                     client.Close();
-                    // MessageBox.Show("Done Sending Data.");
+                // Close Connection
+                writer.Close();
+                client.Close();
+                // MessageBox.Show("Done Sending Data.");
 
-                 }
-                 catch (Exception ex)
-                 {
-                     MessageBox.Show(ex.Message);
-                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             lbCalitate.SelectedIndex = 0;
-            //lbLungime.SelectedIndex = lbLungime.Items.IndexOf(1.3);
-            
+            lbLungime.SelectedIndex = lbLungime.Items.IndexOf(1.3);
+
             tbDiametruBrut.SelectAll();
             try
             {
@@ -234,7 +259,7 @@ eJztVLFu2zAUPNIWIAiGSgHSTnAijADpaGhoGaAfoMH6H0JZBA/9BkKT4QKZjQ5xP0VjkCljkSV9pNXY
         }
         public async Task LoadDatePrinter()
         {
-           
+
             DataAccess db = new DataAccess();
             Task<List<DateCalitate>> task_calitate = db.GetDateCalitate();
             Task<List<DateFurnizori>> task_furnizori = db.GetDateFurnizori();
@@ -244,7 +269,7 @@ eJztVLFu2zAUPNIWIAiGSgHSTnAijADpaGhoGaAfoMH6H0JZBA/9BkKT4QKZjQ5xP0VjkCljkSV9pNXY
             calitateList = await task_calitate;
             LungimeList = await task_lungime;
 
-            await Task.WhenAll(task_furnizori,task_calitate,task_lungime);
+            await Task.WhenAll(task_furnizori, task_calitate, task_lungime);
         }
         private async void Frm_Printer_Load(object sender, EventArgs e)
         {
@@ -252,9 +277,9 @@ eJztVLFu2zAUPNIWIAiGSgHSTnAijADpaGhoGaAfoMH6H0JZBA/9BkKT4QKZjQ5xP0VjkCljkSV9pNXY
             try
             {
 
-               
-                    await Task.Run(async () => LoadDatePrinter());
-                    await Task.Run(StergeEticheteVechi);
+
+                await Task.Run(async () => LoadDatePrinter());
+                await Task.Run(StergeEticheteVechi);
 
 
 
@@ -267,18 +292,18 @@ eJztVLFu2zAUPNIWIAiGSgHSTnAijADpaGhoGaAfoMH6H0JZBA/9BkKT4QKZjQ5xP0VjkCljkSV9pNXY
                         lblPrinterDbError.Visible = false;
                     }
                     cbFurnizor.SelectedIndex = 0;
-                    
+
                 }
                 if (calitateList != null && lbCalitate.Items.Count < calitateList.Count)
                 {
                     foreach (DateCalitate Date in calitateList)
                     {
-                        
+
                         lbCalitate.Items.Add(Date.Calitate);
                         lblPrinterDbError.Visible = false;
-                      
+
                     }
-                   
+
                     lbCalitate.SelectedIndex = 0;
                 }
 
@@ -286,14 +311,14 @@ eJztVLFu2zAUPNIWIAiGSgHSTnAijADpaGhoGaAfoMH6H0JZBA/9BkKT4QKZjQ5xP0VjkCljkSV9pNXY
                 {
                     foreach (DateLungime Date in LungimeList)
                     {
-                        lbLungime.Items.Add(Math.Round(Date.Lungime,2));
-                       
+                        lbLungime.Items.Add(Math.Round(Date.Lungime, 2));
+
                         lblPrinterDbError.Visible = false;
 
                     }
                     Preview_Label();
                     lbLungime.SelectedIndex = 0;
-                   
+
                 }
             }
             catch (Exception ex)
@@ -309,7 +334,7 @@ eJztVLFu2zAUPNIWIAiGSgHSTnAijADpaGhoGaAfoMH6H0JZBA/9BkKT4QKZjQ5xP0VjkCljkSV9pNXY
         private async void timer1_Tick(object sender, EventArgs e)
         {
 
-           
+
             if (furnizoriList == null && calitateList == null)
             {
                 lblPrinterDbError.Visible = true;
@@ -322,61 +347,61 @@ eJztVLFu2zAUPNIWIAiGSgHSTnAijADpaGhoGaAfoMH6H0JZBA/9BkKT4QKZjQ5xP0VjkCljkSV9pNXY
             try
             {
 
-                     await Task.Run(async () => LoadDatePrinter());
-      
- 
-               
+                await Task.Run(async () => LoadDatePrinter());
 
 
-                if (furnizoriList != null )
+
+
+
+                if (furnizoriList != null)
                 {
                     if (cbFurnizor.Items.Count < furnizoriList.Count)
                     {
                         cbFurnizor.Items.Clear();
                         foreach (DateFurnizori Date in furnizoriList)
-                    {
-                        cbFurnizor.Items.Add(Date.Denumire);
-                    }
-                    lblPrinterDbError.Visible = false;
-                    }
-                    
-                }
-                if (calitateList != null )
-
-                        if (lbCalitate.Items.Count < calitateList.Count)
                         {
-                        lbCalitate.Items.Clear();
-                    foreach (DateCalitate Date in calitateList)
+                            cbFurnizor.Items.Add(Date.Denumire);
+                        }
+                        lblPrinterDbError.Visible = false;
+                    }
+
+                }
+                if (calitateList != null)
+
+                    if (lbCalitate.Items.Count < calitateList.Count)
                     {
-                        lbCalitate.Items.Add(Date.Calitate);
-                       
+                        lbCalitate.Items.Clear();
+                        foreach (DateCalitate Date in calitateList)
+                        {
+                            lbCalitate.Items.Add(Date.Calitate);
+
 
                         }
-                    lblPrinterDbError.Visible = false;
-                }
+                        lblPrinterDbError.Visible = false;
+                    }
                 {
-                   
+
                 }
-               
+
 
             }
             catch (Exception ex)
             {
 
-                
+
 
             }
         }
 
         private void cbFurnizor_SelectionChangeCommitted(object sender, EventArgs e)
         {
-           
+
 
         }
 
         private void cbCalitate_SelectionChangeCommitted(object sender, EventArgs e)
         {
-          
+
 
         }
 
@@ -399,7 +424,7 @@ eJztVLFu2zAUPNIWIAiGSgHSTnAijADpaGhoGaAfoMH6H0JZBA/9BkKT4QKZjQ5xP0VjkCljkSV9pNXY
         {
 
         }
-        
+
         private void btnPreview_Click(object sender, EventArgs e)
         {
             this.ActiveControl = tbDiametruBrut;
@@ -409,7 +434,7 @@ eJztVLFu2zAUPNIWIAiGSgHSTnAijADpaGhoGaAfoMH6H0JZBA/9BkKT4QKZjQ5xP0VjkCljkSV9pNXY
         {
             string Data_Curenta = $"{DateTime.Now.Day.ToString("D2")}/{DateTime.Now.Month.ToString("D2")}/{DateTime.Now.Date.ToString("yy")}";
 
-            ZPLString = 
+            ZPLString =
                 $@"
 ^XA~TA000~JSN^LT0^MNW^MTT^PON^PMN^LH0,0^JMA^PR2,2~SD30^JUS^LRN^CI0^XZ
 ^XA
@@ -437,34 +462,34 @@ eJztVLFu2zAUPNIWIAiGSgHSTnAijADpaGhoGaAfoMH6H0JZBA/9BkKT4QKZjQ5xP0VjkCljkSV9pNXY
 
 
 
-/*$@"^XA~TA000~JSN^LT0^MNW^MTT^PON^PMN^LH0,0^JMA^PR2,2~SD30^JUS^LRN^CI0^XZ
-^XA
-^MMT
-^PW799
-^LL1194
-^LS0
-^FO640,1056^GFA,02560,02560,00020,:Z64:
-eJztk71qwzAURq8VCYSyeLB3k8mob5BJAndXwHof4SzGfQmhLuL6JSsIjWwHPLWUgg/y8nG4P0IGODj4JUgERI84+ZyxHqxV1jKVszPCPId5vm89vfYEwvRSrwKotYGlJzF9QwSx8OoawBYbTzhAwLj0egZFX9h+6eGbOyGZ8bzw0hLMbD10wpNVvSJ5tVr3JelSpCer+QrDlIWNF4lHWHss1eppYSjrntnZn3DGe5pvjgvv9rg/a74z4UhEHBAFPr2EUgoe559AopRtOiik2xV5w7njfBz9fj1xEXKYcMKwW49wR/gwxrF1+15zkY1sGtLK3b5/BcHrFMPkr9f8DAq40VJXytyq7Lkw8jB634zPjIKuqKbK6IUnsRWfH17KvC+jXVnrEqquzN4URBtGEIHnvp2m5j39dql3ni8MXrYQA/ofW/rg4OCFL+r7b/I=:4C0F
-^FO96,32^GFA,10240,10240,00080,:Z64:
-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:9CB7
-^FO74,1076^GB685,0,5^FS
-^BY440,440^FT180,998^BXN,22,200,0,0,1,~
-^FH\^FD{ID}^FS
-^FO56,177^GB699,0,5^FS
-^FT94,215^A0N,28,28^FH\^FDLungime : ^FS
-^FT230,215^A0N,28,28^FH\^FD{lbLungime.Text}^FS
-^FT89,257^A0N,28,28^FH\^FDDiametru : ^FS
-^FT230,257^A0N,28,28^FH\^FD{tbDiametruBrut.Text}^FS
-^FT108,300^A0N,28,28^FH\^FDCalitate : ^FS
-^FT230,300^A0N,28,28^FH\^FD{lbCalitate.Text}^FS
-^FT144,342^A0N,28,28^FH\^FDData : ^FS
-^FT230,344^A0N,28,28^FH\^FD{Data_Curenta}^FS
-^FT99,386^A0N,28,28^FH\^FDFurnizor : ^FS
-^FT230,388^A0N,28,28^FH\^FD{cbFurnizor.Text}^FS
-^FT48,430^A0N,28,28^FH\^FDNr. Receptie : ^FS
-^FT230,432^A0N,28,28^FH\^FD{tbNrReceptie.Text}^FS
-^FO69,460^GB690,0,5^FS
-^PQ1,0,1,Y^XZ";*/
+            /*$@"^XA~TA000~JSN^LT0^MNW^MTT^PON^PMN^LH0,0^JMA^PR2,2~SD30^JUS^LRN^CI0^XZ
+            ^XA
+            ^MMT
+            ^PW799
+            ^LL1194
+            ^LS0
+            ^FO640,1056^GFA,02560,02560,00020,:Z64:
+            eJztk71qwzAURq8VCYSyeLB3k8mob5BJAndXwHof4SzGfQmhLuL6JSsIjWwHPLWUgg/y8nG4P0IGODj4JUgERI84+ZyxHqxV1jKVszPCPId5vm89vfYEwvRSrwKotYGlJzF9QwSx8OoawBYbTzhAwLj0egZFX9h+6eGbOyGZ8bzw0hLMbD10wpNVvSJ5tVr3JelSpCer+QrDlIWNF4lHWHss1eppYSjrntnZn3DGe5pvjgvv9rg/a74z4UhEHBAFPr2EUgoe559AopRtOiik2xV5w7njfBz9fj1xEXKYcMKwW49wR/gwxrF1+15zkY1sGtLK3b5/BcHrFMPkr9f8DAq40VJXytyq7Lkw8jB634zPjIKuqKbK6IUnsRWfH17KvC+jXVnrEqquzN4URBtGEIHnvp2m5j39dql3ni8MXrYQA/ofW/rg4OCFL+r7b/I=:4C0F
+            ^FO96,32^GFA,10240,10240,00080,:Z64:
+            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:9CB7
+            ^FO74,1076^GB685,0,5^FS
+            ^BY440,440^FT180,998^BXN,22,200,0,0,1,~
+            ^FH\^FD{ID}^FS
+            ^FO56,177^GB699,0,5^FS
+            ^FT94,215^A0N,28,28^FH\^FDLungime : ^FS
+            ^FT230,215^A0N,28,28^FH\^FD{lbLungime.Text}^FS
+            ^FT89,257^A0N,28,28^FH\^FDDiametru : ^FS
+            ^FT230,257^A0N,28,28^FH\^FD{tbDiametruBrut.Text}^FS
+            ^FT108,300^A0N,28,28^FH\^FDCalitate : ^FS
+            ^FT230,300^A0N,28,28^FH\^FD{lbCalitate.Text}^FS
+            ^FT144,342^A0N,28,28^FH\^FDData : ^FS
+            ^FT230,344^A0N,28,28^FH\^FD{Data_Curenta}^FS
+            ^FT99,386^A0N,28,28^FH\^FDFurnizor : ^FS
+            ^FT230,388^A0N,28,28^FH\^FD{cbFurnizor.Text}^FS
+            ^FT48,430^A0N,28,28^FH\^FDNr. Receptie : ^FS
+            ^FT230,432^A0N,28,28^FH\^FD{tbNrReceptie.Text}^FS
+            ^FO69,460^GB690,0,5^FS
+            ^PQ1,0,1,Y^XZ";*/
             try
             {
 
@@ -494,21 +519,21 @@ eJztWctq40gUvSpJg5CD4oZ4b3plkkW2IoG0Aum9F/JuPqZwb0IW+QYxvRFpcGYZbOhPmG/QUnhhbU0v
 
         }
 
-      
+
 
         private void tbDiametruBrut_KeyDown(object sender, KeyEventArgs e)
         {
-            
+
             if (((e.KeyCode == Keys.Enter) || (e.KeyCode == Keys.Return)))
             {
                 e.Handled = true;
                 e.SuppressKeyPress = true;
                 if (Receptie_Pornita)
-                Imprimare();
+                    Imprimare();
 
-               
+
             }
-           
+
         }
 
         private void btnStartReceptie_Click(object sender, EventArgs e)
@@ -516,6 +541,7 @@ eJztWctq40gUvSpJg5CD4oZ4b3plkkW2IoG0Aum9F/JuPqZwb0IW+QYxvRFpcGYZbOhPmG/QUnhhbU0v
             if (!Receptie_Pornita)
             {
                 lblReceptiePornita.Text = "Receptie Pornita!";
+                tbIndexBustean.Text = "1";
                 lblReceptiePornita.ForeColor = Color.Lime;
                 cbFurnizor.Enabled = false;
                 tbNrAviz.Enabled = false;
@@ -523,6 +549,8 @@ eJztWctq40gUvSpJg5CD4oZ4b3plkkW2IoG0Aum9F/JuPqZwb0IW+QYxvRFpcGYZbOhPmG/QUnhhbU0v
                 Receptie_Pornita = true;
                 btn_print.Visible = true;
                 btnPreview.Visible = false;
+                BtnIndexBustean.Visible = true;
+                tbIndexBustean.Enabled = true;
             }
 
         }
@@ -534,18 +562,20 @@ eJztWctq40gUvSpJg5CD4oZ4b3plkkW2IoG0Aum9F/JuPqZwb0IW+QYxvRFpcGYZbOhPmG/QUnhhbU0v
                 lblReceptiePornita.Text = "Receptie Oprita!";
                 lblReceptiePornita.ForeColor = Color.Red;
                 Numar_Receptie_Curenta++;
-            cbFurnizor.Enabled = true;
-            tbNrAviz.Enabled = true;
-            tbNrReceptie.Enabled = true;
-            Receptie_Pornita = false;
-           
-            btn_print.Visible = false;
-            btnPreview.Visible = true;
-               
+                cbFurnizor.Enabled = true;
+                tbNrAviz.Enabled = true;
+                tbNrReceptie.Enabled = true;
+                Receptie_Pornita = false;
+
+                btn_print.Visible = false;
+                btnPreview.Visible = true;
+                BtnIndexBustean.Visible = false;
+                tbIndexBustean.Enabled = false;
+
             }
         }
 
-      
+
 
         private void cbCalitate_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -562,6 +592,41 @@ eJztWctq40gUvSpJg5CD4oZ4b3plkkW2IoG0Aum9F/JuPqZwb0IW+QYxvRFpcGYZbOhPmG/QUnhhbU0v
         {
             this.ActiveControl = tbDiametruBrut;
             tbDiametruBrut.SelectAll();
+        }
+
+        private void BtnIndexBustean_Click(object sender, EventArgs e)
+        {
+            Imprimare();
+            tbIndexBustean.Text = (Convert.ToInt32(tbIndexBustean.Text) + 1).ToString();
+        }
+
+        private void tbIndexBustean_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbIndexBustean_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void tbDiametruBrut_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbDiametruBrut_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+       (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

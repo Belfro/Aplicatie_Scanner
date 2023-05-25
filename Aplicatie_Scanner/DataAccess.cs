@@ -7,6 +7,7 @@ using Dapper;
 using System.Data;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Zebra.Sdk.Comm;
 
 namespace Aplicatie_Scanner
 {
@@ -21,8 +22,45 @@ namespace Aplicatie_Scanner
                 {
 
 
-                    var output = connection.Query<DateDB>($"select * from {Zona_Selectie} {Conditii_Where} ORDER BY Data_Timp").ToList();
-                     return output;
+                    var output = connection.Query<DateDB>($"" +
+                        $"select * from {Zona_Selectie} " +
+                        $"WHERE Data_Timp BETWEEN '{DataSetata1.ToString("yyyy-MM-dd HH:mm:ss.fff")}' AND '{DataSetata2.ToString("yyyy-MM-dd HH:mm:ss.fff")}' " +
+                        $"{Conditii_Where} " +
+                        $"ORDER BY Data_Timp").ToList();
+                    foreach (var i in output)
+                    {
+                        i.Lungime = Math.Round(i.Lungime, 2);
+                    }
+                    return output;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error Connecting to the Database ! Error:" + ex.Message);
+                return null;
+            }
+        }
+        public List<DateDB> GetDateReceptie(string Receptie)
+        {
+            try
+            {
+                using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ConnStr")))
+                {
+                    var output = connection.Query<DateDB>($"" +
+                        $"SELECT * FROM Depozit WHERE Numar_Receptie = '{Receptie}'" +
+                        $" UNION " +
+                        $"SELECT * FROM Linie_Productie_1 WHERE Numar_Receptie = '{Receptie}'" +
+                        $" UNION " +
+                        $"SELECT * FROM Linie_Productie_2 WHERE Numar_Receptie = '{Receptie}'" +
+                        $" UNION " +
+                        $"SELECT * FROM Linie_Productie_3 WHERE Numar_Receptie = '{Receptie}'" +
+                        $" ORDER BY Locatie_Actuala").ToList();
+                    foreach (var i in output)
+                    {
+                        i.Lungime = Math.Round(i.Lungime, 2);
+                    }
+                    return output;
                 }
             }
             catch (Exception ex)
@@ -148,8 +186,6 @@ namespace Aplicatie_Scanner
                 return output_sum.Suma;
             }
         }*/
-
-
         /*  public void InsertDate(float Data1, float Data2, float Data3, DateTime DataTimp)
           {
               using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ConnStr")))

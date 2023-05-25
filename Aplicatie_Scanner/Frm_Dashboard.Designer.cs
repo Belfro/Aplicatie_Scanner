@@ -29,304 +29,365 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Dashboard));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.newCalendar1 = new Aplicatie_Scanner.NewCalendar();
-            this.Search = new System.Windows.Forms.Button();
-            this.checkBoxFurnizor = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cbFurnizor = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cbZonaSelectie = new System.Windows.Forms.ComboBox();
-            this.cbCalitate = new System.Windows.Forms.ComboBox();
-            this.checkBoxCalitate = new System.Windows.Forms.CheckBox();
-            this.btnPrintCSV = new System.Windows.Forms.Button();
-            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Timp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Locatie_Actuala = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Furnizor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Numar_Aviz = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Numar_Bucati = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Numar_Receptie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Lungime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Diametru = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Calitate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.SuspendLayout();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            pictureBox2 = new PictureBox();
+            dataGridView1 = new DataGridView();
+            Data = new DataGridViewTextBoxColumn();
+            Timp = new DataGridViewTextBoxColumn();
+            Locatie_Actuala = new DataGridViewTextBoxColumn();
+            Furnizor = new DataGridViewTextBoxColumn();
+            Numar_Aviz = new DataGridViewTextBoxColumn();
+            Numar_Receptie = new DataGridViewTextBoxColumn();
+            Numar_Bustean = new DataGridViewTextBoxColumn();
+            Lungime = new DataGridViewTextBoxColumn();
+            Diametru_Net = new DataGridViewTextBoxColumn();
+            Calitate = new DataGridViewTextBoxColumn();
+            Data_Transfer = new DataGridViewTextBoxColumn();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            newCalendar1 = new NewCalendar();
+            Search = new Button();
+            checkBoxFurnizor = new CheckBox();
+            label1 = new Label();
+            cbFurnizor = new ComboBox();
+            label2 = new Label();
+            cbZonaSelectie = new ComboBox();
+            cbCalitate = new ComboBox();
+            checkBoxCalitate = new CheckBox();
+            btnPrintCSV = new Button();
+            CheckBoxReceptie = new CheckBox();
+            tbReceptie = new TextBox();
+            checkBoxIntervalOrar = new CheckBox();
+            numericUpDownStart = new NumericUpDown();
+            numericUpDownEnd = new NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownStart).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownEnd).BeginInit();
+            SuspendLayout();
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(754, 483);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(101, 90);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 34;
-            this.pictureBox2.TabStop = false;
+            pictureBox2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(754, 483);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(101, 90);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 34;
+            pictureBox2.TabStop = false;
             // 
             // dataGridView1
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(100)))));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Data,
-            this.Timp,
-            this.Locatie_Actuala,
-            this.Furnizor,
-            this.Numar_Aviz,
-            this.Numar_Bucati,
-            this.Numar_Receptie,
-            this.Lungime,
-            this.Diametru,
-            this.Calitate});
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 12);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(0);
-            this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(835, 336);
-            this.dataGridView1.TabIndex = 35;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // backgroundWorker1
-            // 
-            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
-            // 
-            // newCalendar1
-            // 
-            this.newCalendar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.newCalendar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(100)))));
-            this.newCalendar1.FirstDayOfWeek = System.Windows.Forms.Day.Monday;
-            this.newCalendar1.Font = new System.Drawing.Font("Nirmala UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.newCalendar1.Location = new System.Drawing.Point(9, 359);
-            this.newCalendar1.Margin = new System.Windows.Forms.Padding(0);
-            this.newCalendar1.MaxSelectionCount = 365;
-            this.newCalendar1.Name = "newCalendar1";
-            this.newCalendar1.TabIndex = 37;
-            this.newCalendar1.TitleBackColor = System.Drawing.Color.White;
-            // 
-            // Search
-            // 
-            this.Search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(100)))));
-            this.Search.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.Search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Search.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Search.ForeColor = System.Drawing.Color.White;
-            this.Search.Location = new System.Drawing.Point(9, 522);
-            this.Search.Name = "Search";
-            this.Search.Size = new System.Drawing.Size(213, 50);
-            this.Search.TabIndex = 38;
-            this.Search.Text = "Search";
-            this.Search.UseVisualStyleBackColor = false;
-            this.Search.Click += new System.EventHandler(this.Search_Click);
-            // 
-            // checkBoxFurnizor
-            // 
-            this.checkBoxFurnizor.AutoSize = true;
-            this.checkBoxFurnizor.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBoxFurnizor.ForeColor = System.Drawing.Color.White;
-            this.checkBoxFurnizor.Location = new System.Drawing.Point(243, 419);
-            this.checkBoxFurnizor.Name = "checkBoxFurnizor";
-            this.checkBoxFurnizor.Size = new System.Drawing.Size(81, 24);
-            this.checkBoxFurnizor.TabIndex = 39;
-            this.checkBoxFurnizor.Text = "Furnizor";
-            this.checkBoxFurnizor.UseVisualStyleBackColor = true;
-            this.checkBoxFurnizor.CheckedChanged += new System.EventHandler(this.checkBoxFurnizor_CheckedChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(237, 396);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 20);
-            this.label1.TabIndex = 40;
-            this.label1.Text = "Cautare Dupa:";
-            // 
-            // cbFurnizor
-            // 
-            this.cbFurnizor.FormattingEnabled = true;
-            this.cbFurnizor.Location = new System.Drawing.Point(330, 420);
-            this.cbFurnizor.Name = "cbFurnizor";
-            this.cbFurnizor.Size = new System.Drawing.Size(139, 23);
-            this.cbFurnizor.TabIndex = 41;
-            this.cbFurnizor.Visible = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(237, 364);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 20);
-            this.label2.TabIndex = 42;
-            this.label2.Text = "Locatie:";
-            // 
-            // cbZonaSelectie
-            // 
-            this.cbZonaSelectie.FormattingEnabled = true;
-            this.cbZonaSelectie.Items.AddRange(new object[] {
-            "Etichete Generate",
-            "Depozit",
-            "Linie Productie 1",
-            "Linie Productie 2",
-            "Linie Productie 3"});
-            this.cbZonaSelectie.Location = new System.Drawing.Point(306, 363);
-            this.cbZonaSelectie.Name = "cbZonaSelectie";
-            this.cbZonaSelectie.Size = new System.Drawing.Size(163, 23);
-            this.cbZonaSelectie.TabIndex = 43;
-            this.cbZonaSelectie.SelectedIndexChanged += new System.EventHandler(this.cbZonaSelectie_SelectedIndexChanged);
-            // 
-            // cbCalitate
-            // 
-            this.cbCalitate.FormattingEnabled = true;
-            this.cbCalitate.Location = new System.Drawing.Point(330, 450);
-            this.cbCalitate.Name = "cbCalitate";
-            this.cbCalitate.Size = new System.Drawing.Size(139, 23);
-            this.cbCalitate.TabIndex = 45;
-            this.cbCalitate.Visible = false;
-            // 
-            // checkBoxCalitate
-            // 
-            this.checkBoxCalitate.AutoSize = true;
-            this.checkBoxCalitate.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBoxCalitate.ForeColor = System.Drawing.Color.White;
-            this.checkBoxCalitate.Location = new System.Drawing.Point(243, 449);
-            this.checkBoxCalitate.Name = "checkBoxCalitate";
-            this.checkBoxCalitate.Size = new System.Drawing.Size(79, 24);
-            this.checkBoxCalitate.TabIndex = 44;
-            this.checkBoxCalitate.Text = "Calitate";
-            this.checkBoxCalitate.UseVisualStyleBackColor = true;
-            this.checkBoxCalitate.CheckedChanged += new System.EventHandler(this.checkBoxCalitate_CheckedChanged);
-            // 
-            // btnPrintCSV
-            // 
-            this.btnPrintCSV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrintCSV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(100)))));
-            this.btnPrintCSV.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnPrintCSV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrintCSV.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnPrintCSV.ForeColor = System.Drawing.Color.White;
-            this.btnPrintCSV.Location = new System.Drawing.Point(307, 512);
-            this.btnPrintCSV.Name = "btnPrintCSV";
-            this.btnPrintCSV.Size = new System.Drawing.Size(132, 50);
-            this.btnPrintCSV.TabIndex = 46;
-            this.btnPrintCSV.Text = "Print\r\nCSV";
-            this.btnPrintCSV.UseVisualStyleBackColor = false;
-            this.btnPrintCSV.Visible = false;
-            this.btnPrintCSV.Click += new System.EventHandler(this.btnPrintCSV_Click);
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.BackgroundColor = Color.FromArgb(46, 51, 100);
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 7F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Data, Timp, Locatie_Actuala, Furnizor, Numar_Aviz, Numar_Receptie, Numar_Bustean, Lungime, Diametru_Net, Calitate, Data_Transfer });
+            dataGridView1.GridColor = SystemColors.ControlLight;
+            dataGridView1.Location = new Point(9, 12);
+            dataGridView1.Margin = new Padding(0);
+            dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 7F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(835, 336);
+            dataGridView1.TabIndex = 35;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // Data
             // 
-            this.Data.FillWeight = 80F;
-            this.Data.HeaderText = "Data";
-            this.Data.Name = "Data";
+            Data.FillWeight = 80F;
+            Data.HeaderText = "Data";
+            Data.Name = "Data";
             // 
             // Timp
             // 
-            this.Timp.FillWeight = 80F;
-            this.Timp.HeaderText = "Timp";
-            this.Timp.Name = "Timp";
+            Timp.FillWeight = 80F;
+            Timp.HeaderText = "Timp";
+            Timp.Name = "Timp";
             // 
             // Locatie_Actuala
             // 
-            this.Locatie_Actuala.HeaderText = "Locatie Actuala";
-            this.Locatie_Actuala.Name = "Locatie_Actuala";
+            Locatie_Actuala.HeaderText = "Locatie Actuala";
+            Locatie_Actuala.Name = "Locatie_Actuala";
             // 
             // Furnizor
             // 
-            this.Furnizor.HeaderText = "Furnizor";
-            this.Furnizor.Name = "Furnizor";
+            Furnizor.HeaderText = "Furnizor";
+            Furnizor.Name = "Furnizor";
             // 
             // Numar_Aviz
             // 
-            this.Numar_Aviz.HeaderText = "Numar Aviz";
-            this.Numar_Aviz.Name = "Numar_Aviz";
-            // 
-            // Numar_Bucati
-            // 
-            this.Numar_Bucati.FillWeight = 40F;
-            this.Numar_Bucati.HeaderText = "Numar Bucati";
-            this.Numar_Bucati.Name = "Numar_Bucati";
+            Numar_Aviz.HeaderText = "Numar Aviz";
+            Numar_Aviz.Name = "Numar_Aviz";
             // 
             // Numar_Receptie
             // 
-            this.Numar_Receptie.HeaderText = "Numar Receptie";
-            this.Numar_Receptie.Name = "Numar_Receptie";
+            Numar_Receptie.HeaderText = "Numar Receptie";
+            Numar_Receptie.Name = "Numar_Receptie";
+            // 
+            // Numar_Bustean
+            // 
+            Numar_Bustean.HeaderText = "Numar Bustean";
+            Numar_Bustean.Name = "Numar_Bustean";
             // 
             // Lungime
             // 
-            this.Lungime.FillWeight = 50F;
-            this.Lungime.HeaderText = "Lungime";
-            this.Lungime.Name = "Lungime";
+            Lungime.FillWeight = 50F;
+            Lungime.HeaderText = "L";
+            Lungime.Name = "Lungime";
             // 
-            // Diametru
+            // Diametru_Net
             // 
-            this.Diametru.FillWeight = 50F;
-            this.Diametru.HeaderText = "Diametru";
-            this.Diametru.Name = "Diametru";
+            Diametru_Net.FillWeight = 50F;
+            Diametru_Net.HeaderText = "D";
+            Diametru_Net.Name = "Diametru_Net";
             // 
             // Calitate
             // 
-            this.Calitate.FillWeight = 40F;
-            this.Calitate.HeaderText = "Calitate";
-            this.Calitate.Name = "Calitate";
+            Calitate.FillWeight = 60F;
+            Calitate.HeaderText = "Calitate";
+            Calitate.Name = "Calitate";
+            // 
+            // Data_Transfer
+            // 
+            Data_Transfer.HeaderText = "Data Transfer";
+            Data_Transfer.Name = "Data_Transfer";
+            // 
+            // backgroundWorker1
+            // 
+            backgroundWorker1.DoWork += backgroundWorker1_DoWork;
+            // 
+            // newCalendar1
+            // 
+            newCalendar1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            newCalendar1.BackColor = Color.FromArgb(46, 51, 100);
+            newCalendar1.FirstDayOfWeek = Day.Monday;
+            newCalendar1.Font = new Font("Nirmala UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            newCalendar1.Location = new Point(9, 359);
+            newCalendar1.Margin = new Padding(0);
+            newCalendar1.MaxSelectionCount = 365;
+            newCalendar1.Name = "newCalendar1";
+            newCalendar1.TabIndex = 37;
+            newCalendar1.TitleBackColor = Color.White;
+            // 
+            // Search
+            // 
+            Search.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            Search.BackColor = Color.FromArgb(46, 51, 100);
+            Search.FlatAppearance.BorderColor = Color.White;
+            Search.FlatStyle = FlatStyle.Flat;
+            Search.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            Search.ForeColor = Color.White;
+            Search.Location = new Point(9, 522);
+            Search.Name = "Search";
+            Search.Size = new Size(213, 50);
+            Search.TabIndex = 38;
+            Search.Text = "Search";
+            Search.UseVisualStyleBackColor = false;
+            Search.Click += Search_Click;
+            // 
+            // checkBoxFurnizor
+            // 
+            checkBoxFurnizor.AutoSize = true;
+            checkBoxFurnizor.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBoxFurnizor.ForeColor = Color.White;
+            checkBoxFurnizor.Location = new Point(243, 419);
+            checkBoxFurnizor.Name = "checkBoxFurnizor";
+            checkBoxFurnizor.Size = new Size(81, 24);
+            checkBoxFurnizor.TabIndex = 39;
+            checkBoxFurnizor.Text = "Furnizor";
+            checkBoxFurnizor.UseVisualStyleBackColor = true;
+            checkBoxFurnizor.CheckedChanged += checkBoxFurnizor_CheckedChanged;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(237, 396);
+            label1.Name = "label1";
+            label1.Size = new Size(108, 20);
+            label1.TabIndex = 40;
+            label1.Text = "Cautare Dupa:";
+            // 
+            // cbFurnizor
+            // 
+            cbFurnizor.FormattingEnabled = true;
+            cbFurnizor.Location = new Point(330, 420);
+            cbFurnizor.Name = "cbFurnizor";
+            cbFurnizor.Size = new Size(139, 23);
+            cbFurnizor.TabIndex = 41;
+            cbFurnizor.Visible = false;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(237, 364);
+            label2.Name = "label2";
+            label2.Size = new Size(63, 20);
+            label2.TabIndex = 42;
+            label2.Text = "Locatie:";
+            // 
+            // cbZonaSelectie
+            // 
+            cbZonaSelectie.FormattingEnabled = true;
+            cbZonaSelectie.Items.AddRange(new object[] { "Etichete Generate", "Depozit", "Linie Productie 1", "Linie Productie 2", "Linie Productie 3" });
+            cbZonaSelectie.Location = new Point(306, 363);
+            cbZonaSelectie.Name = "cbZonaSelectie";
+            cbZonaSelectie.Size = new Size(163, 23);
+            cbZonaSelectie.TabIndex = 43;
+            cbZonaSelectie.SelectedIndexChanged += cbZonaSelectie_SelectedIndexChanged;
+            // 
+            // cbCalitate
+            // 
+            cbCalitate.FormattingEnabled = true;
+            cbCalitate.Location = new Point(330, 450);
+            cbCalitate.Name = "cbCalitate";
+            cbCalitate.Size = new Size(139, 23);
+            cbCalitate.TabIndex = 45;
+            cbCalitate.Visible = false;
+            // 
+            // checkBoxCalitate
+            // 
+            checkBoxCalitate.AutoSize = true;
+            checkBoxCalitate.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBoxCalitate.ForeColor = Color.White;
+            checkBoxCalitate.Location = new Point(243, 449);
+            checkBoxCalitate.Name = "checkBoxCalitate";
+            checkBoxCalitate.Size = new Size(79, 24);
+            checkBoxCalitate.TabIndex = 44;
+            checkBoxCalitate.Text = "Calitate";
+            checkBoxCalitate.UseVisualStyleBackColor = true;
+            checkBoxCalitate.CheckedChanged += checkBoxCalitate_CheckedChanged;
+            // 
+            // btnPrintCSV
+            // 
+            btnPrintCSV.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnPrintCSV.BackColor = Color.FromArgb(46, 51, 100);
+            btnPrintCSV.FlatAppearance.BorderColor = Color.White;
+            btnPrintCSV.FlatStyle = FlatStyle.Flat;
+            btnPrintCSV.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnPrintCSV.ForeColor = Color.White;
+            btnPrintCSV.Location = new Point(237, 522);
+            btnPrintCSV.Name = "btnPrintCSV";
+            btnPrintCSV.Size = new Size(232, 50);
+            btnPrintCSV.TabIndex = 46;
+            btnPrintCSV.Text = "Print\r\nCSV";
+            btnPrintCSV.UseVisualStyleBackColor = false;
+            btnPrintCSV.Visible = false;
+            btnPrintCSV.Click += btnPrintCSV_Click;
+            // 
+            // CheckBoxReceptie
+            // 
+            CheckBoxReceptie.AutoSize = true;
+            CheckBoxReceptie.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            CheckBoxReceptie.ForeColor = Color.White;
+            CheckBoxReceptie.Location = new Point(487, 419);
+            CheckBoxReceptie.Name = "CheckBoxReceptie";
+            CheckBoxReceptie.Size = new Size(86, 24);
+            CheckBoxReceptie.TabIndex = 47;
+            CheckBoxReceptie.Text = "Receptie";
+            CheckBoxReceptie.UseVisualStyleBackColor = true;
+            CheckBoxReceptie.CheckedChanged += CheckBoxReceptie_CheckedChanged;
+            // 
+            // tbReceptie
+            // 
+            tbReceptie.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            tbReceptie.Location = new Point(572, 418);
+            tbReceptie.Name = "tbReceptie";
+            tbReceptie.Size = new Size(120, 23);
+            tbReceptie.TabIndex = 48;
+            // 
+            // checkBoxIntervalOrar
+            // 
+            checkBoxIntervalOrar.AutoSize = true;
+            checkBoxIntervalOrar.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBoxIntervalOrar.ForeColor = Color.White;
+            checkBoxIntervalOrar.Location = new Point(243, 483);
+            checkBoxIntervalOrar.Name = "checkBoxIntervalOrar";
+            checkBoxIntervalOrar.Size = new Size(110, 24);
+            checkBoxIntervalOrar.TabIndex = 49;
+            checkBoxIntervalOrar.Text = "Interval Orar";
+            checkBoxIntervalOrar.UseVisualStyleBackColor = true;
+            checkBoxIntervalOrar.CheckedChanged += checkBoxIntervalOrar_CheckedChanged;
+            // 
+            // numericUpDownStart
+            // 
+            numericUpDownStart.Enabled = false;
+            numericUpDownStart.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            numericUpDownStart.Location = new Point(350, 483);
+            numericUpDownStart.Margin = new Padding(0);
+            numericUpDownStart.Maximum = new decimal(new int[] { 24, 0, 0, 0 });
+            numericUpDownStart.Name = "numericUpDownStart";
+            numericUpDownStart.Size = new Size(51, 29);
+            numericUpDownStart.TabIndex = 53;
+            numericUpDownStart.TextAlign = HorizontalAlignment.Center;
+            numericUpDownStart.Value = new decimal(new int[] { 7, 0, 0, 0 });
+            // 
+            // numericUpDownEnd
+            // 
+            numericUpDownEnd.Enabled = false;
+            numericUpDownEnd.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            numericUpDownEnd.Location = new Point(417, 483);
+            numericUpDownEnd.Margin = new Padding(0);
+            numericUpDownEnd.Maximum = new decimal(new int[] { 24, 0, 0, 0 });
+            numericUpDownEnd.Name = "numericUpDownEnd";
+            numericUpDownEnd.Size = new Size(51, 29);
+            numericUpDownEnd.TabIndex = 54;
+            numericUpDownEnd.TextAlign = HorizontalAlignment.Center;
+            numericUpDownEnd.Value = new decimal(new int[] { 22, 0, 0, 0 });
             // 
             // Frm_Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(867, 574);
-            this.Controls.Add(this.btnPrintCSV);
-            this.Controls.Add(this.cbCalitate);
-            this.Controls.Add(this.checkBoxCalitate);
-            this.Controls.Add(this.cbZonaSelectie);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.cbFurnizor);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.checkBoxFurnizor);
-            this.Controls.Add(this.Search);
-            this.Controls.Add(this.newCalendar1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.pictureBox2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Frm_Dashboard";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_Dashboard_FormClosing);
-            this.Load += new System.EventHandler(this.Frm_Dashboard_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(46, 51, 73);
+            ClientSize = new Size(867, 574);
+            Controls.Add(numericUpDownEnd);
+            Controls.Add(numericUpDownStart);
+            Controls.Add(checkBoxIntervalOrar);
+            Controls.Add(tbReceptie);
+            Controls.Add(CheckBoxReceptie);
+            Controls.Add(btnPrintCSV);
+            Controls.Add(cbCalitate);
+            Controls.Add(checkBoxCalitate);
+            Controls.Add(cbZonaSelectie);
+            Controls.Add(label2);
+            Controls.Add(cbFurnizor);
+            Controls.Add(label1);
+            Controls.Add(checkBoxFurnizor);
+            Controls.Add(Search);
+            Controls.Add(newCalendar1);
+            Controls.Add(dataGridView1);
+            Controls.Add(pictureBox2);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "Frm_Dashboard";
+            FormClosing += Frm_Dashboard_FormClosing;
+            Load += Frm_Dashboard_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownStart).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownEnd).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
 
@@ -344,17 +405,23 @@
         private ComboBox cbCalitate;
         private CheckBox checkBoxCalitate;
         private Button btnPrintCSV;
+        private CheckBox CheckBoxReceptie;
+        private TextBox tbReceptie;
         private DataGridViewTextBoxColumn Data;
         private DataGridViewTextBoxColumn Timp;
         private DataGridViewTextBoxColumn Locatie_Actuala;
         private DataGridViewTextBoxColumn Furnizor;
         private DataGridViewTextBoxColumn Numar_Aviz;
-        private DataGridViewTextBoxColumn Numar_Bucati;
         private DataGridViewTextBoxColumn Numar_Receptie;
+        private DataGridViewTextBoxColumn Numar_Bustean;
         private DataGridViewTextBoxColumn Lungime;
-        private DataGridViewTextBoxColumn Diametru;
+        private DataGridViewTextBoxColumn Diametru_Net;
         private DataGridViewTextBoxColumn Calitate;
+        private DataGridViewTextBoxColumn Data_Transfer;
+        private CheckBox checkBoxIntervalOrar;
+        private NumericUpDown numericUpDownStart;
+        private NumericUpDown numericUpDownEnd;
     }
-            
+
 }
-    
+

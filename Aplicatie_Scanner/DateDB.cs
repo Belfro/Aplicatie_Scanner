@@ -10,16 +10,20 @@ namespace Aplicatie_Scanner
     public class DateDB
     {
         public DateTime Data_Timp { get; set; }
-        public string Furnizor { get; set; }
 
+
+        public string Furnizor { get; set; }
         public string Numar_Aviz { get; set; }
         public string Numar_Receptie { get; set; }
+        public double Numar_Bustean { get; set; }
         public double Lungime { get; set; }
-        public double Diametru { get; set; }
+        public double Diametru_Brut { get; set; }
+        public double Diametru_Net { get; set; }
         public string Calitate { get; set; }
         public string GUID { get; set; }
         public string Locatie_Actuala { get; set; }
         public string Comentariu { get; set; }
+        public DateTime Data_Transfer { get; set; }
         public string Doardata
         {
             get
@@ -36,12 +40,26 @@ namespace Aplicatie_Scanner
                 return $"{Data_Timp.Hour.ToString("D2")}:{Data_Timp.Minute.ToString("D2")}:{Data_Timp.Second.ToString("D2")}";
             }
         }
+        public double Volum_Net
+        {
+            get
+            {
+                return Math.Round(((Diametru_Net / 100) * (Diametru_Net / 100) * 3.14159 * Lungime / 4), 3);
+            }
+        }
+        public double Volum_Brut
+        {
+            get
+            {
+                return Math.Round(((Diametru_Brut / 100) * (Diametru_Brut / 100) * 3.14159 * Lungime / 4),3);
+            }
+        }
         public string FullString
         {
             get
             {
                 // Stringul afisat 
-                return $"{Doardata},{DoarTimp},{Furnizor},{Numar_Aviz},{Numar_Receptie},{Lungime},{Diametru},{Calitate},{GUID},{Locatie_Actuala},{Comentariu}";
+                return $"{Doardata},{DoarTimp},{Furnizor},{Numar_Aviz},{Numar_Receptie},{Numar_Bustean},{Math.Round(Lungime,2)},{Diametru_Net},{Volum_Net},{Volum_Brut},{Calitate},{Locatie_Actuala},{Comentariu},{Data_Transfer}";
             }
         }
     }

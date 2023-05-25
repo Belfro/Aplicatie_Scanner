@@ -39,12 +39,12 @@ namespace Aplicatie_Scanner
         List<DateCalitate> calitateList = new List<DateCalitate>();
         FilterInfoCollection Filtru;
         VideoCaptureDevice Webcam;
-   private void Frm_Scanner_Load(object sender, EventArgs e)
+        private void Frm_Scanner_Load(object sender, EventArgs e)
         {
             Filtru = new FilterInfoCollection(FilterCategory.VideoInputDevice);
             foreach (FilterInfo filterInfo in Filtru)
                 cboDevice.Items.Add(filterInfo.Name);
-            if (cboDevice.Items.Count >1)
+            if (cboDevice.Items.Count > 1)
             {
                 cboDevice.SelectedIndex = 1;
             }
@@ -59,7 +59,7 @@ namespace Aplicatie_Scanner
         }
         private void Trigger_Click(object sender, EventArgs e)
         {
-            
+
             Webcam = new VideoCaptureDevice(Filtru[cboDevice.SelectedIndex].MonikerString);
             Webcam.NewFrame += Webcam_Newframe;
             Webcam.Start();
@@ -107,7 +107,7 @@ namespace Aplicatie_Scanner
                                UNION select * from Linie_Productie_2 WHERE GUID = '{result.ToString()}'
                                UNION select * from Linie_Productie_3 WHERE GUID = '{result.ToString()}'
                                ").ToList();
-                                
+
 
 
                             if (output.FirstOrDefault().Furnizor.ToString() != null)
@@ -115,8 +115,8 @@ namespace Aplicatie_Scanner
                                 tbFurnizor.Text = output.FirstOrDefault().Furnizor.ToString();
                                 tbNrAviz.Text = output.FirstOrDefault().Numar_Aviz.ToString();
                                 tbNrReceptie.Text = output.FirstOrDefault().Numar_Receptie.ToString();
-                                tbDiametruBrut.Text = output.FirstOrDefault().Diametru.ToString();
-                                tbLungime.Text = Math.Round( output.FirstOrDefault().Lungime,2).ToString();
+                                tbDiametruBrut.Text = output.FirstOrDefault().Diametru_Brut.ToString();
+                                tbLungime.Text = Math.Round(output.FirstOrDefault().Lungime, 2).ToString();
                                 cbLocatieNoua.SelectedIndex = cbLocatieNoua.FindStringExact(output.FirstOrDefault().Locatie_Actuala.ToString());
                                 ID = output.FirstOrDefault().GUID.ToString();
                                 tbLocatieCurenta.Text = output.FirstOrDefault().Locatie_Actuala.ToString();
@@ -124,17 +124,17 @@ namespace Aplicatie_Scanner
                                 lblLocatieNoua.Visible = true;
                                 btnModifica.Visible = true;
                                 ////Calcul Automat Diametru NET////
-                                if (output.FirstOrDefault().Diametru >= 42)
+                                if (output.FirstOrDefault().Diametru_Brut >= 42)
                                 {
-                                    lblDiametruNet.Text = "Net: " + (output.FirstOrDefault().Diametru - 3).ToString();
+                                    lblDiametruNet.Text = "Net: " + (output.FirstOrDefault().Diametru_Brut - 3).ToString();
                                 }
-                                else if (output.FirstOrDefault().Diametru > 18 && output.FirstOrDefault().Diametru < 41)
+                                else if (output.FirstOrDefault().Diametru_Brut > 18 && output.FirstOrDefault().Diametru_Brut < 41)
                                 {
-                                    lblDiametruNet.Text = "Net: " + (output.FirstOrDefault().Diametru - 2).ToString();
+                                    lblDiametruNet.Text = "Net: " + (output.FirstOrDefault().Diametru_Brut - 2).ToString();
                                 }
                                 else
                                 {
-                                    lblDiametruNet.Text = "Net: " + (output.FirstOrDefault().Diametru).ToString();
+                                    lblDiametruNet.Text = "Net: " + (output.FirstOrDefault().Diametru_Brut).ToString();
                                 }
                                 tbCalitate.Text = output.FirstOrDefault().Calitate.ToString();
                             }
@@ -145,10 +145,10 @@ namespace Aplicatie_Scanner
                     {
 
                         MessageBox.Show("Error:" + ex.Message);
-                       
+
                     }
                     tbGUIDScanat.Text = result.ToString();
-                   
+
                     timer1.Stop();
                     pictureBox1.Image = null;
                     if (Webcam.IsRunning)
@@ -183,7 +183,7 @@ namespace Aplicatie_Scanner
                                 tbFurnizor.Text = output.FirstOrDefault().Furnizor.ToString();
                                 tbNrAviz.Text = output.FirstOrDefault().Numar_Aviz.ToString();
                                 tbNrReceptie.Text = output.FirstOrDefault().Numar_Receptie.ToString();
-                                tbDiametruBrut.Text = output.FirstOrDefault().Diametru.ToString();
+                                tbDiametruBrut.Text = output.FirstOrDefault().Diametru_Brut.ToString();
                                 tbLungime.Text = Math.Round(output.FirstOrDefault().Lungime, 2).ToString();
                                 ID = output.FirstOrDefault().GUID.ToString();
                                 tbLocatieCurenta.Text = output.FirstOrDefault().Locatie_Actuala.ToString();
@@ -191,17 +191,17 @@ namespace Aplicatie_Scanner
                                 lblLocatieNoua.Visible = true;
                                 btnModifica.Visible = true;
                                 ////Calcul Automat Diametru NET////
-                                if (output.FirstOrDefault().Diametru >= 42)
+                                if (output.FirstOrDefault().Diametru_Brut >= 42)
                                 {
-                                    lblDiametruNet.Text = "Net: " + (output.FirstOrDefault().Diametru - 3).ToString();
+                                    lblDiametruNet.Text = "Net: " + (output.FirstOrDefault().Diametru_Brut - 3).ToString();
                                 }
-                                else if (output.FirstOrDefault().Diametru > 18 && output.FirstOrDefault().Diametru < 41)
+                                else if (output.FirstOrDefault().Diametru_Brut > 18 && output.FirstOrDefault().Diametru_Brut < 41)
                                 {
-                                    lblDiametruNet.Text = "Net: " + (output.FirstOrDefault().Diametru - 2).ToString();
+                                    lblDiametruNet.Text = "Net: " + (output.FirstOrDefault().Diametru_Brut - 2).ToString();
                                 }
                                 else
                                 {
-                                    lblDiametruNet.Text = "Net: " + (output.FirstOrDefault().Diametru).ToString();
+                                    lblDiametruNet.Text = "Net: " + (output.FirstOrDefault().Diametru_Brut).ToString();
                                 }
                                 tbCalitate.Text = output.FirstOrDefault().Calitate.ToString();
                             }
@@ -214,17 +214,17 @@ namespace Aplicatie_Scanner
                                     var cmd = connection.CreateCommand();
 
 
-                                cmd.CommandText = $" BEGIN TRANSACTION;" +
-                                    $"\r\nINSERT INTO {cbLocatieNoua.Text} (Data_Timp,Furnizor,Numar_Aviz,Numar_Receptie,Lungime,Diametru,Calitate,GUID,Locatie_Actuala,Comentariu)" +
-                                    $"\r\nSELECT Data_Timp,Furnizor,Numar_Aviz,Numar_Receptie,Lungime,Diametru,Calitate,GUID,Locatie_Actuala,Comentariu" +
-                                    $"\r\nFROM {tbLocatieCurenta.Text}\r\nWHERE GUID = '{ID}';" +
-                                    $"\r\nDELETE FROM {tbLocatieCurenta.Text}" +
-                                    $"\r\nWHERE GUID = '{ID}';\r\nCOMMIT;" +
-                                    $"\r\n UPDATE {cbLocatieNoua.Text} SET Locatie_Actuala = '{cbLocatieNoua.Text}' ";
-                                cmd.CommandTimeout = 15;
-                                cmd.CommandType = CommandType.Text;
-                                cmd.ExecuteNonQuery();
-                                tbLocatieCurenta.Text = cbLocatieNoua.Text;
+                                    cmd.CommandText = $" BEGIN TRANSACTION;" +
+                                        $"\r\nINSERT INTO {cbLocatieNoua.Text} (Data_Timp,Furnizor,Numar_Aviz,Numar_Receptie,Lungime,Diametru,Calitate,GUID,Locatie_Actuala,Comentariu)" +
+                                        $"\r\nSELECT Data_Timp,Furnizor,Numar_Aviz,Numar_Receptie,Lungime,Diametru,Calitate,GUID,Locatie_Actuala,Comentariu" +
+                                        $"\r\nFROM {tbLocatieCurenta.Text}\r\nWHERE GUID = '{ID}';" +
+                                        $"\r\nDELETE FROM {tbLocatieCurenta.Text}" +
+                                        $"\r\nWHERE GUID = '{ID}';\r\nCOMMIT;" +
+                                        $"\r\n UPDATE {cbLocatieNoua.Text} SET Locatie_Actuala = '{cbLocatieNoua.Text}' ";
+                                    cmd.CommandTimeout = 15;
+                                    cmd.CommandType = CommandType.Text;
+                                    cmd.ExecuteNonQuery();
+                                    tbLocatieCurenta.Text = cbLocatieNoua.Text;
                                 }
                                 connection.Close();
                             }
@@ -233,7 +233,7 @@ namespace Aplicatie_Scanner
                             {
                                 MessageBox.Show("Error:" + ex.Message);
                             }
-                        }  
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -243,7 +243,7 @@ namespace Aplicatie_Scanner
                     }
                     tbGUIDScanat.Text = result.ToString();
 
-                   
+
                 }
             }
         }
@@ -253,7 +253,7 @@ namespace Aplicatie_Scanner
         }
         private void Btn_Disconnect_Click(object sender, EventArgs e)
         {
-           
+
             if (Webcam.IsRunning)
                 Webcam.SignalToStop();
             pictureBox1.Image = null;
@@ -291,12 +291,12 @@ namespace Aplicatie_Scanner
 
 
                         cmd.CommandText = $" BEGIN TRANSACTION;" +
-                                    $"\r\nINSERT INTO {cbLocatieNoua.Text} (Data_Timp,Furnizor,Numar_Aviz,Numar_Receptie,Lungime,Diametru,Calitate,GUID,Locatie_Actuala,Comentariu)" +
-                                    $"\r\nSELECT Data_Timp,Furnizor,Numar_Aviz,Numar_Receptie,Lungime,Diametru,Calitate,GUID,Locatie_Actuala,Comentariu" +
+                                    $"\r\nINSERT INTO {cbLocatieNoua.Text} (Data_Timp,Furnizor,Numar_Aviz,Numar_Receptie,Numar_Bustean,Lungime,Diametru_Brut,Diametru_Net,Calitate,GUID,Locatie_Actuala,Comentariu,Data_Transfer)" +
+                                    $"\r\nSELECT Data_Timp,Furnizor,Numar_Aviz,Numar_Receptie,Numar_Bustean,Lungime,Diametru_Brut,Diametru_Net,Calitate,GUID,Locatie_Actuala,Comentariu,Data_Transfer" +
                                     $"\r\nFROM {tbLocatieCurenta.Text}\r\nWHERE GUID = '{ID}';" +
                                     $"\r\nDELETE FROM {tbLocatieCurenta.Text}" +
                                     $"\r\nWHERE GUID = '{ID}';\r\nCOMMIT;" +
-                                    $"\r\n UPDATE {cbLocatieNoua.Text} SET Locatie_Actuala = '{cbLocatieNoua.Text}' ";
+                                    $"\r\n UPDATE {cbLocatieNoua.Text} SET Locatie_Actuala = '{cbLocatieNoua.Text}', Data_Transfer = '{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")}'";
                         cmd.CommandTimeout = 15;
                         cmd.CommandType = CommandType.Text;
                         cmd.ExecuteNonQuery();
@@ -320,17 +320,22 @@ namespace Aplicatie_Scanner
 
         private void checkboxScanare_CheckedChanged(object sender, EventArgs e)
         {
-                if (checkboxScanare.Checked)
+            if (checkboxScanare.Checked)
             {
                 lblLocatieNoua.Visible = true;
                 cbLocatieNoua.Visible = true;
             }
-                if (!checkboxScanare.Checked)
+            if (!checkboxScanare.Checked)
             {
                 lblLocatieNoua.Visible = false;
                 cbLocatieNoua.Visible = false;
-                btnModifica.Visible = false;    
+                btnModifica.Visible = false;
             }
+        }
+
+        private void lblDiametruNet_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

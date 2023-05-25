@@ -28,445 +28,477 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Printer));
-            this.btn_print = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cbFurnizor = new System.Windows.Forms.ComboBox();
-            this.lblFurnizor = new System.Windows.Forms.Label();
-            this.lblNrAviz = new System.Windows.Forms.Label();
-            this.tbNrAviz = new System.Windows.Forms.TextBox();
-            this.tbDiametruBrut = new System.Windows.Forms.TextBox();
-            this.lblDiametru = new System.Windows.Forms.Label();
-            this.lblCalitate = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lblPrinterDbError = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblNrReceptie = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblLungime = new System.Windows.Forms.Label();
-            this.btnPreview = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lbLungime = new System.Windows.Forms.ListBox();
-            this.btnStartReceptie = new System.Windows.Forms.Button();
-            this.btnStopReceptie = new System.Windows.Forms.Button();
-            this.lbCalitate = new System.Windows.Forms.ListBox();
-            this.tbNrReceptie = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.rtbComentariu = new System.Windows.Forms.RichTextBox();
-            this.lblReceptiePornita = new System.Windows.Forms.Label();
-            this.tbID = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pbRomply = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRomply)).BeginInit();
-            this.SuspendLayout();
+            btn_print = new Button();
+            pictureBox2 = new PictureBox();
+            label2 = new Label();
+            cbFurnizor = new ComboBox();
+            lblFurnizor = new Label();
+            lblNrAviz = new Label();
+            tbNrAviz = new TextBox();
+            tbDiametruBrut = new TextBox();
+            lblDiametru = new Label();
+            lblCalitate = new Label();
+            timer1 = new System.Windows.Forms.Timer(components);
+            lblPrinterDbError = new Label();
+            label3 = new Label();
+            lblNrReceptie = new Label();
+            label4 = new Label();
+            lblLungime = new Label();
+            btnPreview = new Button();
+            pictureBox1 = new PictureBox();
+            lbLungime = new ListBox();
+            btnStartReceptie = new Button();
+            btnStopReceptie = new Button();
+            lbCalitate = new ListBox();
+            tbNrReceptie = new TextBox();
+            label5 = new Label();
+            rtbComentariu = new RichTextBox();
+            lblReceptiePornita = new Label();
+            tbID = new TextBox();
+            groupBox1 = new GroupBox();
+            pbRomply = new PictureBox();
+            tbIndexBustean = new TextBox();
+            lblIndexBustean = new Label();
+            BtnIndexBustean = new Button();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbRomply).BeginInit();
+            SuspendLayout();
             // 
             // btn_print
             // 
-            this.btn_print.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_print.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(100)))));
-            this.btn_print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_print.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_print.ForeColor = System.Drawing.Color.Black;
-            this.btn_print.Location = new System.Drawing.Point(573, 176);
-            this.btn_print.Name = "btn_print";
-            this.btn_print.Size = new System.Drawing.Size(290, 89);
-            this.btn_print.TabIndex = 35;
-            this.btn_print.Text = "Print";
-            this.btn_print.UseVisualStyleBackColor = false;
-            this.btn_print.Visible = false;
-            this.btn_print.Click += new System.EventHandler(this.button_print_Click);
+            btn_print.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_print.BackColor = Color.FromArgb(46, 51, 100);
+            btn_print.FlatStyle = FlatStyle.Flat;
+            btn_print.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_print.ForeColor = Color.Black;
+            btn_print.Location = new Point(573, 176);
+            btn_print.Name = "btn_print";
+            btn_print.Size = new Size(290, 89);
+            btn_print.TabIndex = 35;
+            btn_print.Text = "Print";
+            btn_print.UseVisualStyleBackColor = false;
+            btn_print.Visible = false;
+            btn_print.Click += button_print_Click;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(754, 483);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(101, 90);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 37;
-            this.pictureBox2.TabStop = false;
+            pictureBox2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(754, 483);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(101, 90);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 37;
+            pictureBox2.TabStop = false;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Cursor = System.Windows.Forms.Cursors.No;
-            this.label2.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(174, 30);
-            this.label2.TabIndex = 39;
-            this.label2.Text = "Eticheta Curenta";
+            label2.AutoSize = true;
+            label2.Cursor = Cursors.No;
+            label2.Font = new Font("Nirmala UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(12, 25);
+            label2.Name = "label2";
+            label2.Size = new Size(174, 30);
+            label2.TabIndex = 39;
+            label2.Text = "Eticheta Curenta";
             // 
             // cbFurnizor
             // 
-            this.cbFurnizor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbFurnizor.BackColor = System.Drawing.Color.White;
-            this.cbFurnizor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbFurnizor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbFurnizor.FormattingEnabled = true;
-            this.cbFurnizor.Location = new System.Drawing.Point(318, 72);
-            this.cbFurnizor.Name = "cbFurnizor";
-            this.cbFurnizor.Size = new System.Drawing.Size(249, 29);
-            this.cbFurnizor.TabIndex = 40;
-            this.cbFurnizor.SelectedIndexChanged += new System.EventHandler(this.cbFurnizor_SelectedIndexChanged);
-            this.cbFurnizor.SelectionChangeCommitted += new System.EventHandler(this.cbFurnizor_SelectionChangeCommitted);
+            cbFurnizor.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            cbFurnizor.BackColor = Color.White;
+            cbFurnizor.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbFurnizor.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            cbFurnizor.FormattingEnabled = true;
+            cbFurnizor.Location = new Point(318, 72);
+            cbFurnizor.Name = "cbFurnizor";
+            cbFurnizor.Size = new Size(249, 29);
+            cbFurnizor.TabIndex = 40;
+            cbFurnizor.SelectedIndexChanged += cbFurnizor_SelectedIndexChanged;
+            cbFurnizor.SelectionChangeCommitted += cbFurnizor_SelectionChangeCommitted;
             // 
             // lblFurnizor
             // 
-            this.lblFurnizor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblFurnizor.AutoSize = true;
-            this.lblFurnizor.Cursor = System.Windows.Forms.Cursors.No;
-            this.lblFurnizor.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblFurnizor.ForeColor = System.Drawing.Color.White;
-            this.lblFurnizor.Location = new System.Drawing.Point(318, 55);
-            this.lblFurnizor.Name = "lblFurnizor";
-            this.lblFurnizor.Size = new System.Drawing.Size(59, 17);
-            this.lblFurnizor.TabIndex = 41;
-            this.lblFurnizor.Text = "Furnizor";
+            lblFurnizor.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            lblFurnizor.AutoSize = true;
+            lblFurnizor.Cursor = Cursors.No;
+            lblFurnizor.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblFurnizor.ForeColor = Color.White;
+            lblFurnizor.Location = new Point(318, 55);
+            lblFurnizor.Name = "lblFurnizor";
+            lblFurnizor.Size = new Size(59, 17);
+            lblFurnizor.TabIndex = 41;
+            lblFurnizor.Text = "Furnizor";
             // 
             // lblNrAviz
             // 
-            this.lblNrAviz.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblNrAviz.AutoSize = true;
-            this.lblNrAviz.Cursor = System.Windows.Forms.Cursors.No;
-            this.lblNrAviz.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblNrAviz.ForeColor = System.Drawing.Color.White;
-            this.lblNrAviz.Location = new System.Drawing.Point(318, 104);
-            this.lblNrAviz.Name = "lblNrAviz";
-            this.lblNrAviz.Size = new System.Drawing.Size(80, 17);
-            this.lblNrAviz.TabIndex = 44;
-            this.lblNrAviz.Text = "Numar Aviz";
+            lblNrAviz.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            lblNrAviz.AutoSize = true;
+            lblNrAviz.Cursor = Cursors.No;
+            lblNrAviz.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblNrAviz.ForeColor = Color.White;
+            lblNrAviz.Location = new Point(318, 104);
+            lblNrAviz.Name = "lblNrAviz";
+            lblNrAviz.Size = new Size(80, 17);
+            lblNrAviz.TabIndex = 44;
+            lblNrAviz.Text = "Numar Aviz";
             // 
             // tbNrAviz
             // 
-            this.tbNrAviz.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbNrAviz.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbNrAviz.Location = new System.Drawing.Point(318, 121);
-            this.tbNrAviz.Name = "tbNrAviz";
-            this.tbNrAviz.Size = new System.Drawing.Size(249, 29);
-            this.tbNrAviz.TabIndex = 45;
+            tbNrAviz.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            tbNrAviz.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            tbNrAviz.Location = new Point(318, 121);
+            tbNrAviz.Name = "tbNrAviz";
+            tbNrAviz.Size = new Size(249, 29);
+            tbNrAviz.TabIndex = 45;
             // 
             // tbDiametruBrut
             // 
-            this.tbDiametruBrut.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbDiametruBrut.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbDiametruBrut.Location = new System.Drawing.Point(622, 337);
-            this.tbDiametruBrut.Name = "tbDiametruBrut";
-            this.tbDiametruBrut.Size = new System.Drawing.Size(81, 43);
-            this.tbDiametruBrut.TabIndex = 47;
-            this.tbDiametruBrut.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbDiametruBrut_KeyDown);
+            tbDiametruBrut.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            tbDiametruBrut.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            tbDiametruBrut.Location = new Point(319, 337);
+            tbDiametruBrut.Name = "tbDiametruBrut";
+            tbDiametruBrut.Size = new Size(81, 43);
+            tbDiametruBrut.TabIndex = 47;
+            tbDiametruBrut.TextChanged += tbDiametruBrut_TextChanged;
+            tbDiametruBrut.KeyDown += tbDiametruBrut_KeyDown;
+            tbDiametruBrut.KeyPress += tbDiametruBrut_KeyPress;
             // 
             // lblDiametru
             // 
-            this.lblDiametru.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDiametru.AutoSize = true;
-            this.lblDiametru.Cursor = System.Windows.Forms.Cursors.No;
-            this.lblDiametru.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblDiametru.ForeColor = System.Drawing.Color.White;
-            this.lblDiametru.Location = new System.Drawing.Point(615, 317);
-            this.lblDiametru.Name = "lblDiametru";
-            this.lblDiametru.Size = new System.Drawing.Size(96, 17);
-            this.lblDiametru.TabIndex = 48;
-            this.lblDiametru.Text = "Diametru Brut";
+            lblDiametru.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            lblDiametru.AutoSize = true;
+            lblDiametru.Cursor = Cursors.No;
+            lblDiametru.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblDiametru.ForeColor = Color.White;
+            lblDiametru.Location = new Point(313, 317);
+            lblDiametru.Name = "lblDiametru";
+            lblDiametru.Size = new Size(96, 17);
+            lblDiametru.TabIndex = 48;
+            lblDiametru.Text = "Diametru Brut";
             // 
             // lblCalitate
             // 
-            this.lblCalitate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCalitate.AutoSize = true;
-            this.lblCalitate.Cursor = System.Windows.Forms.Cursors.No;
-            this.lblCalitate.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblCalitate.ForeColor = System.Drawing.Color.White;
-            this.lblCalitate.Location = new System.Drawing.Point(467, 317);
-            this.lblCalitate.Name = "lblCalitate";
-            this.lblCalitate.Size = new System.Drawing.Size(55, 17);
-            this.lblCalitate.TabIndex = 50;
-            this.lblCalitate.Text = "Calitate";
+            lblCalitate.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            lblCalitate.AutoSize = true;
+            lblCalitate.Cursor = Cursors.No;
+            lblCalitate.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblCalitate.ForeColor = Color.White;
+            lblCalitate.Location = new Point(164, 317);
+            lblCalitate.Name = "lblCalitate";
+            lblCalitate.Size = new Size(55, 17);
+            lblCalitate.TabIndex = 50;
+            lblCalitate.Text = "Calitate";
             // 
             // timer1
             // 
-            this.timer1.Interval = 3000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            timer1.Interval = 3000;
+            timer1.Tick += timer1_Tick;
             // 
             // lblPrinterDbError
             // 
-            this.lblPrinterDbError.AutoSize = true;
-            this.lblPrinterDbError.Cursor = System.Windows.Forms.Cursors.No;
-            this.lblPrinterDbError.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblPrinterDbError.ForeColor = System.Drawing.Color.Red;
-            this.lblPrinterDbError.Location = new System.Drawing.Point(15, 5);
-            this.lblPrinterDbError.Name = "lblPrinterDbError";
-            this.lblPrinterDbError.Size = new System.Drawing.Size(46, 17);
-            this.lblPrinterDbError.TabIndex = 52;
-            this.lblPrinterDbError.Text = "Error !";
-            this.lblPrinterDbError.Visible = false;
+            lblPrinterDbError.AutoSize = true;
+            lblPrinterDbError.Cursor = Cursors.No;
+            lblPrinterDbError.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblPrinterDbError.ForeColor = Color.Red;
+            lblPrinterDbError.Location = new Point(15, 5);
+            lblPrinterDbError.Name = "lblPrinterDbError";
+            lblPrinterDbError.Size = new Size(46, 17);
+            lblPrinterDbError.TabIndex = 52;
+            lblPrinterDbError.Text = "Error !";
+            lblPrinterDbError.Visible = false;
             // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Cursor = System.Windows.Forms.Cursors.No;
-            this.label3.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(322, 25);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(150, 30);
-            this.label3.TabIndex = 54;
-            this.label3.Text = "Date Generale";
+            label3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label3.AutoSize = true;
+            label3.Cursor = Cursors.No;
+            label3.Font = new Font("Nirmala UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(322, 25);
+            label3.Name = "label3";
+            label3.Size = new Size(150, 30);
+            label3.TabIndex = 54;
+            label3.Text = "Date Generale";
             // 
             // lblNrReceptie
             // 
-            this.lblNrReceptie.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblNrReceptie.AutoSize = true;
-            this.lblNrReceptie.Cursor = System.Windows.Forms.Cursors.No;
-            this.lblNrReceptie.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblNrReceptie.ForeColor = System.Drawing.Color.White;
-            this.lblNrReceptie.Location = new System.Drawing.Point(317, 155);
-            this.lblNrReceptie.Name = "lblNrReceptie";
-            this.lblNrReceptie.Size = new System.Drawing.Size(106, 17);
-            this.lblNrReceptie.TabIndex = 57;
-            this.lblNrReceptie.Text = "Numar Receptie";
+            lblNrReceptie.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            lblNrReceptie.AutoSize = true;
+            lblNrReceptie.Cursor = Cursors.No;
+            lblNrReceptie.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblNrReceptie.ForeColor = Color.White;
+            lblNrReceptie.Location = new Point(317, 155);
+            lblNrReceptie.Name = "lblNrReceptie";
+            lblNrReceptie.Size = new Size(106, 17);
+            lblNrReceptie.TabIndex = 57;
+            lblNrReceptie.Text = "Numar Receptie";
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Cursor = System.Windows.Forms.Cursors.No;
-            this.label4.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(325, 286);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(147, 30);
-            this.label4.TabIndex = 59;
-            this.label4.Text = "Date Receptie";
+            label4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label4.AutoSize = true;
+            label4.Cursor = Cursors.No;
+            label4.Font = new Font("Nirmala UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(22, 286);
+            label4.Name = "label4";
+            label4.Size = new Size(147, 30);
+            label4.TabIndex = 59;
+            label4.Text = "Date Receptie";
             // 
             // lblLungime
             // 
-            this.lblLungime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblLungime.AutoSize = true;
-            this.lblLungime.Cursor = System.Windows.Forms.Cursors.No;
-            this.lblLungime.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblLungime.ForeColor = System.Drawing.Color.White;
-            this.lblLungime.Location = new System.Drawing.Point(318, 317);
-            this.lblLungime.Name = "lblLungime";
-            this.lblLungime.Size = new System.Drawing.Size(62, 17);
-            this.lblLungime.TabIndex = 61;
-            this.lblLungime.Text = "Lungime";
+            lblLungime.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            lblLungime.AutoSize = true;
+            lblLungime.Cursor = Cursors.No;
+            lblLungime.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblLungime.ForeColor = Color.White;
+            lblLungime.Location = new Point(15, 317);
+            lblLungime.Name = "lblLungime";
+            lblLungime.Size = new Size(62, 17);
+            lblLungime.TabIndex = 61;
+            lblLungime.Text = "Lungime";
             // 
             // btnPreview
             // 
-            this.btnPreview.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPreview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(100)))));
-            this.btnPreview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPreview.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnPreview.ForeColor = System.Drawing.Color.Transparent;
-            this.btnPreview.Location = new System.Drawing.Point(573, 176);
-            this.btnPreview.Name = "btnPreview";
-            this.btnPreview.Size = new System.Drawing.Size(290, 89);
-            this.btnPreview.TabIndex = 64;
-            this.btnPreview.Text = "Previzualizare";
-            this.btnPreview.UseVisualStyleBackColor = false;
-            this.btnPreview.Click += new System.EventHandler(this.btnPreview_Click);
+            btnPreview.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnPreview.BackColor = Color.FromArgb(46, 51, 100);
+            btnPreview.FlatStyle = FlatStyle.Flat;
+            btnPreview.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnPreview.ForeColor = Color.Transparent;
+            btnPreview.Location = new Point(573, 176);
+            btnPreview.Name = "btnPreview";
+            btnPreview.Size = new Size(290, 89);
+            btnPreview.TabIndex = 64;
+            btnPreview.Text = "Previzualizare";
+            btnPreview.UseVisualStyleBackColor = false;
+            btnPreview.Click += btnPreview_Click;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 8);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(301, 447);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 34;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            pictureBox1.BackColor = Color.White;
+            pictureBox1.Location = new Point(0, 8);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(301, 447);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 34;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // lbLungime
             // 
-            this.lbLungime.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbLungime.FormattingEnabled = true;
-            this.lbLungime.ItemHeight = 31;
-            this.lbLungime.Location = new System.Drawing.Point(318, 337);
-            this.lbLungime.Name = "lbLungime";
-            this.lbLungime.Size = new System.Drawing.Size(143, 190);
-            this.lbLungime.TabIndex = 67;
-            this.lbLungime.SelectedIndexChanged += new System.EventHandler(this.lbLungime_SelectedIndexChanged);
+            lbLungime.Font = new Font("Segoe UI", 17F, FontStyle.Regular, GraphicsUnit.Point);
+            lbLungime.FormattingEnabled = true;
+            lbLungime.ItemHeight = 31;
+            lbLungime.Location = new Point(15, 337);
+            lbLungime.Name = "lbLungime";
+            lbLungime.Size = new Size(143, 190);
+            lbLungime.TabIndex = 67;
+            lbLungime.SelectedIndexChanged += lbLungime_SelectedIndexChanged;
             // 
             // btnStartReceptie
             // 
-            this.btnStartReceptie.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnStartReceptie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(100)))));
-            this.btnStartReceptie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStartReceptie.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnStartReceptie.ForeColor = System.Drawing.Color.Chartreuse;
-            this.btnStartReceptie.Location = new System.Drawing.Point(573, 72);
-            this.btnStartReceptie.Name = "btnStartReceptie";
-            this.btnStartReceptie.Size = new System.Drawing.Size(142, 89);
-            this.btnStartReceptie.TabIndex = 68;
-            this.btnStartReceptie.Text = "Start\r\nReceptie";
-            this.btnStartReceptie.UseVisualStyleBackColor = false;
-            this.btnStartReceptie.Click += new System.EventHandler(this.btnStartReceptie_Click);
+            btnStartReceptie.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnStartReceptie.BackColor = Color.FromArgb(46, 51, 100);
+            btnStartReceptie.FlatStyle = FlatStyle.Flat;
+            btnStartReceptie.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnStartReceptie.ForeColor = Color.Chartreuse;
+            btnStartReceptie.Location = new Point(573, 72);
+            btnStartReceptie.Name = "btnStartReceptie";
+            btnStartReceptie.Size = new Size(142, 89);
+            btnStartReceptie.TabIndex = 68;
+            btnStartReceptie.Text = "Start\r\nReceptie";
+            btnStartReceptie.UseVisualStyleBackColor = false;
+            btnStartReceptie.Click += btnStartReceptie_Click;
             // 
             // btnStopReceptie
             // 
-            this.btnStopReceptie.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnStopReceptie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(100)))));
-            this.btnStopReceptie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStopReceptie.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnStopReceptie.ForeColor = System.Drawing.Color.Red;
-            this.btnStopReceptie.Location = new System.Drawing.Point(721, 72);
-            this.btnStopReceptie.Name = "btnStopReceptie";
-            this.btnStopReceptie.Size = new System.Drawing.Size(142, 89);
-            this.btnStopReceptie.TabIndex = 69;
-            this.btnStopReceptie.Text = "Stop\nReceptie";
-            this.btnStopReceptie.UseVisualStyleBackColor = false;
-            this.btnStopReceptie.Click += new System.EventHandler(this.btnStopReceptie_Click);
+            btnStopReceptie.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnStopReceptie.BackColor = Color.FromArgb(46, 51, 100);
+            btnStopReceptie.FlatStyle = FlatStyle.Flat;
+            btnStopReceptie.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnStopReceptie.ForeColor = Color.Red;
+            btnStopReceptie.Location = new Point(721, 72);
+            btnStopReceptie.Name = "btnStopReceptie";
+            btnStopReceptie.Size = new Size(142, 89);
+            btnStopReceptie.TabIndex = 69;
+            btnStopReceptie.Text = "Stop\nReceptie";
+            btnStopReceptie.UseVisualStyleBackColor = false;
+            btnStopReceptie.Click += btnStopReceptie_Click;
             // 
             // lbCalitate
             // 
-            this.lbCalitate.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbCalitate.FormattingEnabled = true;
-            this.lbCalitate.ItemHeight = 31;
-            this.lbCalitate.Location = new System.Drawing.Point(467, 337);
-            this.lbCalitate.Name = "lbCalitate";
-            this.lbCalitate.Size = new System.Drawing.Size(143, 190);
-            this.lbCalitate.TabIndex = 72;
-            this.lbCalitate.SelectedIndexChanged += new System.EventHandler(this.lbCalitate_SelectedIndexChanged);
+            lbCalitate.Font = new Font("Segoe UI", 17F, FontStyle.Regular, GraphicsUnit.Point);
+            lbCalitate.FormattingEnabled = true;
+            lbCalitate.ItemHeight = 31;
+            lbCalitate.Location = new Point(164, 337);
+            lbCalitate.Name = "lbCalitate";
+            lbCalitate.Size = new Size(143, 190);
+            lbCalitate.TabIndex = 72;
+            lbCalitate.SelectedIndexChanged += lbCalitate_SelectedIndexChanged;
             // 
             // tbNrReceptie
             // 
-            this.tbNrReceptie.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbNrReceptie.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbNrReceptie.Location = new System.Drawing.Point(317, 172);
-            this.tbNrReceptie.Name = "tbNrReceptie";
-            this.tbNrReceptie.Size = new System.Drawing.Size(249, 29);
-            this.tbNrReceptie.TabIndex = 58;
+            tbNrReceptie.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            tbNrReceptie.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            tbNrReceptie.Location = new Point(317, 172);
+            tbNrReceptie.Name = "tbNrReceptie";
+            tbNrReceptie.Size = new Size(249, 29);
+            tbNrReceptie.TabIndex = 58;
             // 
             // label5
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Cursor = System.Windows.Forms.Cursors.No;
-            this.label5.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(317, 205);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 17);
-            this.label5.TabIndex = 74;
-            this.label5.Text = "Comentariu";
+            label5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label5.AutoSize = true;
+            label5.Cursor = Cursors.No;
+            label5.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(317, 205);
+            label5.Name = "label5";
+            label5.Size = new Size(80, 17);
+            label5.TabIndex = 74;
+            label5.Text = "Comentariu";
             // 
             // rtbComentariu
             // 
-            this.rtbComentariu.Location = new System.Drawing.Point(317, 225);
-            this.rtbComentariu.Name = "rtbComentariu";
-            this.rtbComentariu.Size = new System.Drawing.Size(249, 40);
-            this.rtbComentariu.TabIndex = 75;
-            this.rtbComentariu.Text = "";
+            rtbComentariu.Location = new Point(317, 225);
+            rtbComentariu.Name = "rtbComentariu";
+            rtbComentariu.Size = new Size(249, 40);
+            rtbComentariu.TabIndex = 75;
+            rtbComentariu.Text = "";
             // 
             // lblReceptiePornita
             // 
-            this.lblReceptiePornita.AutoSize = true;
-            this.lblReceptiePornita.Cursor = System.Windows.Forms.Cursors.No;
-            this.lblReceptiePornita.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblReceptiePornita.ForeColor = System.Drawing.Color.Red;
-            this.lblReceptiePornita.Location = new System.Drawing.Point(573, 25);
-            this.lblReceptiePornita.Name = "lblReceptiePornita";
-            this.lblReceptiePornita.Size = new System.Drawing.Size(171, 30);
-            this.lblReceptiePornita.TabIndex = 76;
-            this.lblReceptiePornita.Text = "Receptie Oprita!";
+            lblReceptiePornita.AutoSize = true;
+            lblReceptiePornita.Cursor = Cursors.No;
+            lblReceptiePornita.Font = new Font("Nirmala UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblReceptiePornita.ForeColor = Color.Red;
+            lblReceptiePornita.Location = new Point(573, 25);
+            lblReceptiePornita.Name = "lblReceptiePornita";
+            lblReceptiePornita.Size = new Size(171, 30);
+            lblReceptiePornita.TabIndex = 76;
+            lblReceptiePornita.Text = "Receptie Oprita!";
             // 
             // tbID
             // 
-            this.tbID.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbID.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbID.Location = new System.Drawing.Point(39, 243);
-            this.tbID.Name = "tbID";
-            this.tbID.ReadOnly = true;
-            this.tbID.Size = new System.Drawing.Size(235, 22);
-            this.tbID.TabIndex = 77;
+            tbID.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            tbID.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            tbID.Location = new Point(39, 243);
+            tbID.Name = "tbID";
+            tbID.ReadOnly = true;
+            tbID.Size = new Size(235, 22);
+            tbID.TabIndex = 77;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.pbRomply);
-            this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Location = new System.Drawing.Point(10, 72);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(301, 150);
-            this.groupBox1.TabIndex = 78;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            groupBox1.Controls.Add(pbRomply);
+            groupBox1.Controls.Add(pictureBox1);
+            groupBox1.Location = new Point(10, 72);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(301, 150);
+            groupBox1.TabIndex = 78;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "groupBox1";
             // 
             // pbRomply
             // 
-            this.pbRomply.Image = global::Aplicatie_Scanner.Properties.Resources.logo_romply_merops_1_1600;
-            this.pbRomply.Location = new System.Drawing.Point(153, 18);
-            this.pbRomply.Name = "pbRomply";
-            this.pbRomply.Size = new System.Drawing.Size(118, 23);
-            this.pbRomply.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbRomply.TabIndex = 79;
-            this.pbRomply.TabStop = false;
+            pbRomply.Image = Properties.Resources.logo_romply_merops_1_1600;
+            pbRomply.Location = new Point(153, 18);
+            pbRomply.Name = "pbRomply";
+            pbRomply.Size = new Size(118, 23);
+            pbRomply.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbRomply.TabIndex = 79;
+            pbRomply.TabStop = false;
+            // 
+            // tbIndexBustean
+            // 
+            tbIndexBustean.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            tbIndexBustean.Location = new Point(430, 337);
+            tbIndexBustean.Name = "tbIndexBustean";
+            tbIndexBustean.Size = new Size(72, 43);
+            tbIndexBustean.TabIndex = 79;
+            tbIndexBustean.TextChanged += tbIndexBustean_TextChanged;
+            tbIndexBustean.KeyPress += tbIndexBustean_KeyPress;
+            // 
+            // lblIndexBustean
+            // 
+            lblIndexBustean.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            lblIndexBustean.AutoSize = true;
+            lblIndexBustean.Cursor = Cursors.No;
+            lblIndexBustean.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblIndexBustean.ForeColor = Color.White;
+            lblIndexBustean.Location = new Point(418, 317);
+            lblIndexBustean.Name = "lblIndexBustean";
+            lblIndexBustean.Size = new Size(99, 17);
+            lblIndexBustean.TabIndex = 80;
+            lblIndexBustean.Text = "Index Bustean ";
+            // 
+            // BtnIndexBustean
+            // 
+            BtnIndexBustean.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            BtnIndexBustean.BackColor = Color.FromArgb(46, 51, 100);
+            BtnIndexBustean.FlatStyle = FlatStyle.Flat;
+            BtnIndexBustean.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            BtnIndexBustean.ForeColor = Color.Black;
+            BtnIndexBustean.Location = new Point(318, 438);
+            BtnIndexBustean.Name = "BtnIndexBustean";
+            BtnIndexBustean.Size = new Size(185, 89);
+            BtnIndexBustean.TabIndex = 81;
+            BtnIndexBustean.Text = "Urmatorul Bustean\r\n+ \r\nPrint";
+            BtnIndexBustean.UseVisualStyleBackColor = false;
+            BtnIndexBustean.Visible = false;
+            BtnIndexBustean.Click += BtnIndexBustean_Click;
             // 
             // Frm_Printer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(867, 574);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.tbID);
-            this.Controls.Add(this.lblReceptiePornita);
-            this.Controls.Add(this.rtbComentariu);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.lbCalitate);
-            this.Controls.Add(this.btnStopReceptie);
-            this.Controls.Add(this.btnStartReceptie);
-            this.Controls.Add(this.lbLungime);
-            this.Controls.Add(this.btnPreview);
-            this.Controls.Add(this.lblLungime);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.tbNrReceptie);
-            this.Controls.Add(this.lblNrReceptie);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.lblPrinterDbError);
-            this.Controls.Add(this.lblCalitate);
-            this.Controls.Add(this.lblDiametru);
-            this.Controls.Add(this.tbDiametruBrut);
-            this.Controls.Add(this.tbNrAviz);
-            this.Controls.Add(this.lblNrAviz);
-            this.Controls.Add(this.lblFurnizor);
-            this.Controls.Add(this.cbFurnizor);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.btn_print);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Frm_Printer";
-            this.Text = "Frm_Printer";
-            this.Load += new System.EventHandler(this.Frm_Printer_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbRomply)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(46, 51, 73);
+            ClientSize = new Size(867, 574);
+            Controls.Add(BtnIndexBustean);
+            Controls.Add(lblIndexBustean);
+            Controls.Add(tbIndexBustean);
+            Controls.Add(groupBox1);
+            Controls.Add(tbID);
+            Controls.Add(lblReceptiePornita);
+            Controls.Add(rtbComentariu);
+            Controls.Add(label5);
+            Controls.Add(lbCalitate);
+            Controls.Add(btnStopReceptie);
+            Controls.Add(btnStartReceptie);
+            Controls.Add(lbLungime);
+            Controls.Add(btnPreview);
+            Controls.Add(lblLungime);
+            Controls.Add(label4);
+            Controls.Add(tbNrReceptie);
+            Controls.Add(lblNrReceptie);
+            Controls.Add(label3);
+            Controls.Add(lblPrinterDbError);
+            Controls.Add(lblCalitate);
+            Controls.Add(lblDiametru);
+            Controls.Add(tbDiametruBrut);
+            Controls.Add(tbNrAviz);
+            Controls.Add(lblNrAviz);
+            Controls.Add(lblFurnizor);
+            Controls.Add(cbFurnizor);
+            Controls.Add(label2);
+            Controls.Add(pictureBox2);
+            Controls.Add(btn_print);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "Frm_Printer";
+            Text = "Frm_Printer";
+            Load += Frm_Printer_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pbRomply).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -502,5 +534,8 @@
         private TextBox tbID;
         private GroupBox groupBox1;
         private PictureBox pbRomply;
+        private TextBox tbIndexBustean;
+        private Label lblIndexBustean;
+        private Button BtnIndexBustean;
     }
 }
