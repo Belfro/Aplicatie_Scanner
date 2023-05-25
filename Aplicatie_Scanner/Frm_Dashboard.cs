@@ -306,7 +306,7 @@ namespace Aplicatie_Scanner
                     ",Nr Bucati: " +
                     $",{date.Where(i => i.Calitate == "Gater").Count()}" +
                     $"\nVolum Lemn Foc: " +
-                    $",{Cantitate_Lemn_Foc}");
+                    $",{(Math.Round(date.Where(i => i.Calitate == "Lemn Foc").Sum(i => i.Volum_Net), 4) + Convert.ToDouble(Cantitate_Lemn_Foc)).ToString()}");
 
             }
         }
@@ -377,7 +377,10 @@ namespace Aplicatie_Scanner
             //inputBox.CancelButton = cancelButton;
 
             DialogResult result = inputBox.ShowDialog();
+            if (double.TryParse(textBox.Text, out double n))
             input = textBox.Text;
+            else
+                input = 0.ToString();
             return result;
         }
 
