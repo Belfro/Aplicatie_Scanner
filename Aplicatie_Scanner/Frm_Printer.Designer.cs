@@ -74,7 +74,7 @@
             btn_print.BackColor = Color.FromArgb(46, 51, 100);
             btn_print.FlatStyle = FlatStyle.Flat;
             btn_print.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_print.ForeColor = Color.Black;
+            btn_print.ForeColor = Color.White;
             btn_print.Location = new Point(573, 176);
             btn_print.Name = "btn_print";
             btn_print.Size = new Size(290, 89);
@@ -440,14 +440,13 @@
             // 
             // BtnIndexBustean
             // 
-            BtnIndexBustean.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnIndexBustean.BackColor = Color.FromArgb(46, 51, 100);
             BtnIndexBustean.FlatStyle = FlatStyle.Flat;
             BtnIndexBustean.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            BtnIndexBustean.ForeColor = Color.Black;
-            BtnIndexBustean.Location = new Point(318, 438);
+            BtnIndexBustean.ForeColor = Color.White;
+            BtnIndexBustean.Location = new Point(318, 416);
             BtnIndexBustean.Name = "BtnIndexBustean";
-            BtnIndexBustean.Size = new Size(185, 89);
+            BtnIndexBustean.Size = new Size(185, 111);
             BtnIndexBustean.TabIndex = 81;
             BtnIndexBustean.Text = "Urmatorul Bustean\r\n+ \r\nPrint";
             BtnIndexBustean.UseVisualStyleBackColor = false;
