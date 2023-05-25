@@ -118,3 +118,4 @@ C:\Users\AndreiS\iCloudDrive\AS\Azel\Romply\Aplicatie Scanner\Aplicatie_Scanner\
 C:\Users\AndreiS\iCloudDrive\AS\Azel\Romply\Aplicatie Scanner\Aplicatie_Scanner\Aplicatie_Scanner\obj\Release\net6.0-windows\win-x86\refint\Aplicatie_Scanner.dll
 C:\Users\AndreiS\iCloudDrive\AS\Azel\Romply\Aplicatie Scanner\Aplicatie_Scanner\Aplicatie_Scanner\obj\Release\net6.0-windows\win-x86\Aplicatie_Scanner.pdb
 C:\Users\AndreiS\iCloudDrive\AS\Azel\Romply\Aplicatie Scanner\Aplicatie_Scanner\Aplicatie_Scanner\obj\Release\net6.0-windows\win-x86\ref\Aplicatie_Scanner.dll
+C:\Users\AndreiS\iCloudDrive\AS\Azel\Romply\Aplicatie Scanner\Aplicatie_Scanner\Aplicatie_Scanner\obj\Release\net6.0-windows\win-x86\Aplicatie_Scanner.Form_Dialog.resources
