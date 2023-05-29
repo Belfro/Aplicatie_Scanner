@@ -296,7 +296,7 @@ namespace Aplicatie_Scanner
                                     $"\r\nFROM {tbLocatieCurenta.Text}\r\nWHERE GUID = '{ID}';" +
                                     $"\r\nDELETE FROM {tbLocatieCurenta.Text}" +
                                     $"\r\nWHERE GUID = '{ID}';\r\nCOMMIT;" +
-                                    $"\r\n UPDATE {cbLocatieNoua.Text} SET Locatie_Actuala = '{cbLocatieNoua.Text}', Data_Transfer = '{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")}'";
+                                    $"\r\n UPDATE {cbLocatieNoua.Text} SET Locatie_Actuala = '{cbLocatieNoua.Text}', Data_Transfer = '{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")}' WHERE GUID = '{ID}';";
                         cmd.CommandTimeout = 15;
                         cmd.CommandType = CommandType.Text;
                         cmd.ExecuteNonQuery();
