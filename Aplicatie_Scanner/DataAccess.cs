@@ -24,7 +24,7 @@ namespace Aplicatie_Scanner
 
                     var output = connection.Query<DateDB>($"" +
                         $"select * from {Zona_Selectie} " +
-                        $"WHERE Data_Timp BETWEEN '{DataSetata1.ToString("yyyy-MM-dd HH:mm:ss.fff")}' AND '{DataSetata2.ToString("yyyy-MM-dd HH:mm:ss.fff")}' " +
+                        $"WHERE Data_Transfer BETWEEN '{DataSetata1.ToString("yyyy-MM-dd HH:mm:ss.fff")}' AND '{DataSetata2.ToString("yyyy-MM-dd HH:mm:ss.fff")}' " +
                         $"{Conditii_Where} " +
                         $"ORDER BY Data_Timp").ToList();
                     foreach (var i in output)
