@@ -26,7 +26,7 @@ namespace Aplicatie_Scanner
                         $"select * from {Zona_Selectie} " +
                         $"WHERE Data_Transfer BETWEEN '{DataSetata1.ToString("yyyy-MM-dd HH:mm:ss.fff")}' AND '{DataSetata2.ToString("yyyy-MM-dd HH:mm:ss.fff")}' " +
                         $"{Conditii_Where} " +
-                        $"ORDER BY Data_Timp").ToList();
+                        $"ORDER BY Data_Transfer").ToList();
                     foreach (var i in output)
                     {
                         i.Lungime = Math.Round(i.Lungime, 2);
