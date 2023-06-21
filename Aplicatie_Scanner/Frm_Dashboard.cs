@@ -273,7 +273,7 @@ namespace Aplicatie_Scanner
             {
                 if (CheckBoxReceptie.Checked) file.WriteLine($"Numar Receptie,{tbReceptie.Text},,,,,,,,,,,");
 
-                file.WriteLine("Data,Ora,Furnizor,Numar Aviz,Numar Receptie,Numar Bustean,Lungime,Diametru Net,Volum Net,Volum Brut,Calitate,Locatie Actuala,Comentariu,Data Transfer");
+                file.WriteLine("Data,Ora,Furnizor,Numar Aviz,Numar Receptie,Numar Bustean,Lungime,Diametru Net,Diametru Brut,Volum Net,Volum Brut,Calitate,Locatie Actuala,Comentariu,Data Transfer");
                 foreach (var arr in date)
                 {
                     file.WriteLine(string.Join(",", arr.FullString));

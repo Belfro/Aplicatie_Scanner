@@ -59,7 +59,7 @@ namespace Aplicatie_Scanner
             get
             {
                 // Stringul afisat 
-                return $"{Doardata},{DoarTimp},{Furnizor},{Numar_Aviz},{Numar_Receptie},{Numar_Bustean},{Math.Round(Lungime,2)},{Diametru_Net},{Volum_Net},{Volum_Brut},{Calitate},{Locatie_Actuala},{Comentariu},{Data_Transfer}";
+                return $"{Doardata},{DoarTimp},{Furnizor},{Numar_Aviz},{Numar_Receptie},{Numar_Bustean},{Math.Round(Lungime,2)},{Diametru_Net},{Diametru_Brut},{Volum_Net},{Volum_Brut},{Calitate},{Locatie_Actuala},{Comentariu},{Data_Transfer}";
             }
         }
     }

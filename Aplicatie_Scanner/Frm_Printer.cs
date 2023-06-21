@@ -113,7 +113,7 @@ namespace Aplicatie_Scanner
             {
                 output = diametru - 3;
             }
-            else if (diametru > 18 && diametru < 41)
+            else if (diametru >= 18 && diametru < 42)
             {
                 output = diametru - 2;
             }
