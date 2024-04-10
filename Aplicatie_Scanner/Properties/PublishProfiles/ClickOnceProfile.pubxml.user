@@ -2,4 +2,13 @@
 <!--
 https://go.microsoft.com/fwlink/?LinkID=208121.
 -->
+<<<<<<< HEAD
 <Project />
+=======
+<Project>
+  <PropertyGroup>
+    <History>True|2024-04-10T07:48:21.4052125Z;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>
+>>>>>>> Update Calcul Diametru la cerere client

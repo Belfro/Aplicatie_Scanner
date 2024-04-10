@@ -14,6 +14,10 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Aplicatie_Scanner
+<<<<<<< HEAD
 build_property.ProjectDir = C:\AS\Work\Aplicatie Scanner\Aplicatie_Scanner\Aplicatie_Scanner\
+=======
+build_property.ProjectDir = C:\AS\Work\Aplicatie_Scanner\Aplicatie_Scanner\
+>>>>>>> Update Calcul Diametru la cerere client
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

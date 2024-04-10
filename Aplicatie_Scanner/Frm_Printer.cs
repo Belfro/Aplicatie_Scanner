@@ -109,17 +109,17 @@ namespace Aplicatie_Scanner
         {
             double output = 0;
             ////Calcul Automat Diametru NET////
-            if (diametru >= 42)
+            if (diametru > 70)
+            {
+                output = diametru - 4;
+            }
+            else if (diametru >= 40 && diametru <= 70)
             {
                 output = diametru - 3;
             }
-            else if (diametru >= 18 && diametru < 42)
+            else if (diametru < 40)
             {
                 output = diametru - 2;
-            }
-            else
-            {
-                output = diametru;
             }
             return output;
         }

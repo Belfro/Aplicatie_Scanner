@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "gvEMecMii7aNyewLLvf7JfqkLt01XQFC1+xX4E4HGDM83nEgarAWi6edTaeMHqT0ksKugmGII6HT+9ytXJXF4w==",
   "success": true,
   "projectFilePath": "C:\\AS\\Work\\Romply\\Aplicatie Scanner\\Aplicatie_Scanner\\Aplicatie_Scanner\\Aplicatie_Scanner.csproj",
+=======
+  "dgSpecHash": "728Cl43YolDVoyUn8ffmyHeG2OmOINcnS4eqgYbl7dDbslRGBLkJjAnqh3+db7ZGdJQ/rAlsPpzgeRKTqpoS7w==",
+  "success": true,
+  "projectFilePath": "C:\\AS\\Work\\Aplicatie_Scanner\\Aplicatie_Scanner\\Aplicatie_Scanner.csproj",
+>>>>>>> Update Calcul Diametru la cerere client
   "expectedPackageFiles": [
     "C:\\Users\\andrei.stan\\.nuget\\packages\\aforge\\2.2.5\\aforge.2.2.5.nupkg.sha512",
     "C:\\Users\\andrei.stan\\.nuget\\packages\\aforge.video\\2.2.5\\aforge.video.2.2.5.nupkg.sha512",

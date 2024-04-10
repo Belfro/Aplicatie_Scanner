@@ -1,0 +1,22 @@
+<<<<<<< HEAD:Published/Aplicatie_Scanner.dll.config
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <connectionStrings>
+    <add name="ConnStr" connectionString="Data Source=192.168.170.2,1433;Initial Catalog=Romply; Integrated Security=False;User ID=siemens;Password=siemens;Connection Timeout=4"/>
+  </connectionStrings>
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.8"/>
+    </startup>
+</configuration>
+=======
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <connectionStrings>
+    <add name="ConnStr" connectionString="Data Source=192.168.170.3,1433;Initial Catalog=Romply; Integrated Security=False;User ID=siemens;Password=siemens;Connection Timeout=4"/>
+  </connectionStrings>
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.8"/>
+    </startup>
+</configuration>
+	
+>>>>>>> Update Calcul Diametru la cerere client:Aplicatie_Scanner/bin/Release/net6.0-windows/win-x86/app.publish/Application Files/Aplicatie_Scanner_1_0_0_90/Aplicatie_Scanner.dll.config.deploy
