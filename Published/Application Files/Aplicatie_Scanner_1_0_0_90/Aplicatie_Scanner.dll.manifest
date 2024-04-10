@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="Aplicatie_Scanner.exe" version="1.0.0.90" publicKeyToken="ad364f9080e7c93c" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="Aplicatie_Scanner.exe" version="1.0.0.90" publicKeyToken="a122d0c8b903514e" language="neutral" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="b1zoci3k.nyc.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
@@ -50,7 +50,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>yncXxyky8hNmlK3E6HmFYfYjKlBq2FYfFIh+T5lP3UI=</dsig:DigestValue>
+        <dsig:DigestValue>83eWuQ9M/lzE/CRTae2mnINqTtrHpJbC/xHrZaPKoP0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -81,22 +81,22 @@
       <dsig:DigestValue>uvpu0EyieCJwB0EnoEmN3gIsKp9Alsa7K448CLs9QE0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Aplicatie_Scanner.deps.json" size="106495">
+  <file name="Aplicatie_Scanner.deps.json" size="93215">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>aU+yO7z/2ddcooNVQrDzsVZqnG/ZrSZWLKCt22Xm5xw=</dsig:DigestValue>
+      <dsig:DigestValue>+DF+74tA3MvH03g7J+lfmPPyMFBXj05FzLdeQItSnDg=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Aplicatie_Scanner.dll" size="643592">
+  <file name="Aplicatie_Scanner.dll" size="644104">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>qcqSLTaHBBioszejjxfEUYZtTgteHZJRB46hE0kXZ/U=</dsig:DigestValue>
+      <dsig:DigestValue>JbzjQgcwX3nerr6UP0KyOvo7/3Kp8km+98nBD0W0gWI=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Aplicatie_Scanner.dll.config" size="413">
@@ -108,13 +108,13 @@
       <dsig:DigestValue>9OtzI/1uOKN6vvoaVe4qlJS9R4C3QWaPMyYj3eZvpL0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Aplicatie_Scanner.exe" size="386568">
+  <file name="Aplicatie_Scanner.exe" size="421384">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>uM1cxgBuR4ei9TAhs38mJtLkI9HvpfVU4dZmN/eR4fk=</dsig:DigestValue>
+      <dsig:DigestValue>sdQ6SDqBXpgA3UoCNAztjJkUZnfRqQaLYcmWezv8fzA=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Aplicatie_Scanner.runtimeconfig.json" size="372">
@@ -198,15 +198,6 @@
       <dsig:DigestValue>UTbVh9sM55ywZHcoTux1/N8tNtnz5MkeiRoEF4yJhLs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="libSkiaSharp.dll" size="7081872">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>v2nJrmWxpSJ0A91QPYsEhWZxlNoEDAdfRfqXYEGyBhE=</dsig:DigestValue>
-    </hash>
-  </file>
   <file name="Microsoft.AspNetCore.Http.Abstractions.dll" size="76152">
     <hash>
       <dsig:Transforms>
@@ -279,6 +270,123 @@
       <dsig:DigestValue>yjUnEzMOsv0Ijkm5Q0FJncZHVBaAoWd3/f631+d5YZk=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="runtimes\linux-arm\native\libSkiaSharp.so" size="4877876">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>fqJC+rQEuwyfuQxJqFJeoVspUjWz0kdREnYgWu25Wz0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="runtimes\linux-arm64\native\libSkiaSharp.so" size="6296328">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>vPP7o6FLXIMq2oG91cxEMW/GTj7XtkuMpL4qgc9ZQhk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="runtimes\linux-musl-x64\native\libSkiaSharp.so" size="10159936">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>S27Gv1TZnyYvT4p7ik0Z7yF5/ef31cWn5aUhjEwHBQ8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="runtimes\linux-x64\native\libSkiaSharp.so" size="8422640">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>iUSRLNwIddVdNV5Xeap34xOKBOwWldaD4f8FgkFOvLg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="runtimes\osx\native\libSkiaSharp.dylib" size="8495552">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>+uQPMsgzPNo+DhIBVZ5QBZwUa8U+iGmsVh32g6VaIvQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll" size="955256">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>8X/i6l+S+R+6OInDwZlU4vi19G4Z/GYFgp4i9/uZTCA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll" size="1023872">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>yZWTJGsP9SjC3ZbutMFgp+E0vA15mJ0HhGgqafEVaAM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="runtimes\win-arm64\native\libSkiaSharp.dll" size="7177104">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>jP3QXT7n5n+/S8cqx4grphm7yrqE8nRX80Odg1mrjQM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="runtimes\win-arm64\native\sni.dll" size="174224">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>7xhFjE3Lk/a06sB+FYnPNFC/h48t1iP1009qDxsW5Xo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="runtimes\win-x64\native\libSkiaSharp.dll" size="8413072">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>swOxg0ryFtpb46kaN0o3hwHfssoscNj6B4KccDWulY4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="runtimes\win-x64\native\sni.dll" size="160040">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>aHBcTvmrgY8pVqeOBfP+/OUBoUSHk7BztGEQvrSbR9Y=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="runtimes\win-x86\native\libSkiaSharp.dll" size="7081872">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>v2nJrmWxpSJ0A91QPYsEhWZxlNoEDAdfRfqXYEGyBhE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="runtimes\win-x86\native\sni.dll" size="136488">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>FEbWsm2kmlqfNmly+J9OI2+RaVXzHdw467liF8HKzpw=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="SdkApi.Core.dll" size="316336">
     <hash>
       <dsig:Transforms>
@@ -315,22 +423,13 @@
       <dsig:DigestValue>vq/0YPC4sHTuD23swi8u8TAgdkCZ5FN5VkLxALWUyJo=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="sni.dll" size="136488">
+  <file name="System.Data.SqlClient.dll" size="267136">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>FEbWsm2kmlqfNmly+J9OI2+RaVXzHdw467liF8HKzpw=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="System.Data.SqlClient.dll" size="1023872">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>yZWTJGsP9SjC3ZbutMFgp+E0vA15mJ0HhGgqafEVaAM=</dsig:DigestValue>
+      <dsig:DigestValue>MEhlg3Y9xPg4PVw50tdHctlzHHqHTALt1dOljI84JJo=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Xamarin.Forms.Core.dll" size="562232">
@@ -396,4 +495,4 @@
       <dsig:DigestValue>puX0dp9sppeZ9sIYx9CKz6ItAB+ATcrzINe8wk7eV2s=</dsig:DigestValue>
     </hash>
   </file>
-<publisherIdentity name="CN=DESKTOP-RTJATDO\andrei.stan" issuerKeyHash="f99010607bae3d411a6f3c8419b0985a11b93a05" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>RwaojnQOiYRBrV5EGmJ6eYSr+0uY38Qxc60pdD57nYo=</DigestValue></Reference></SignedInfo><SignatureValue>m+cFCN+RW2tBrNb5F/N6xLTogOV/pnQ0GQ0uulQAbVt5OlZRQeVn48mHWEyrCtLhNr9wYxJyQ2ZoGiSbhDAljtJf2xG0MBMXqwFsVtXuIijG+uvqirCfS/6ClrFlc/P+Fi4/oK4+NbC5MR2EVnoFJDzrKcE8SJ2drBk2MCfmfpU=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>uvOydtCKGKrKB33lpfIXqQmlBSPchoPC9EH9I+OCvl5g9AnatJej9TaatUYc3hiybvdMoW1vRMpJzq4We8hgHm9PkDK2kzjMmUHAQ8bF2B4REHbdfoxbEp5IOOkKCvJAcLsqWE5vVs+y6j4GHuBvzr1VZba3xEkCZDu44ks9RSE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="8a9d7b3e7429ad7331c4df984bfbab84797a621a445ead4184890e748ea80647" Description="" Url=""><as:assemblyIdentity name="Aplicatie_Scanner.exe" version="1.0.0.90" publicKeyToken="ad364f9080e7c93c" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-RTJATDO\andrei.stan</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>DsfB1oumv81KGaahiAHSJ3pFl9OUGQF0IYHSJMoFGZs=</DigestValue></Reference></SignedInfo><SignatureValue>Pp73nFDxU10BnwzO9QPph4nir3SI5RwkSX2DuYDls+6Ql57jAIqBH6OxggzoI46N5Z0z0pkIC4cGQZP4geUkpth1nNkMN69/Ls8XM5UNrwRkLGdVDovQStXO3pZwFx7PaCa9LOoZKJ0Ig+zPqqkpJ2VdapXRnRMNoGKrzc+3vE0=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>uvOydtCKGKrKB33lpfIXqQmlBSPchoPC9EH9I+OCvl5g9AnatJej9TaatUYc3hiybvdMoW1vRMpJzq4We8hgHm9PkDK2kzjMmUHAQ8bF2B4REHbdfoxbEp5IOOkKCvJAcLsqWE5vVs+y6j4GHuBvzr1VZba3xEkCZDu44ks9RSE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIICBTCCAW6gAwIBAgIQUfzOdnLuVo5MmhEEeiFUMTANBgkqhkiG9w0BAQsFADBBMT8wPQYDVQQDHjYARABFAFMASwBUAE8AUAAtAFIAVABKAEEAVABEAE8AXABhAG4AZAByAGUAaQAuAHMAdABhAG4wHhcNMjQwNDEwMDc0ODA3WhcNMjUwNDEwMTM0ODA3WjBBMT8wPQYDVQQDHjYARABFAFMASwBUAE8AUAAtAFIAVABKAEEAVABEAE8AXABhAG4AZAByAGUAaQAuAHMAdABhAG4wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBALrzsnbQihiqygd95aXyF6kJpQUj3IaDwvRB/SPjgr5eYPQJ2rSXo/U2mrVGHN4Ysm73TKFtb0TKSc6uFnvIYB5vT5AytpM4zJlBwEPGxdgeERB23X6MWxKeSDjpCgryQHC7KlhOb1bPsuo+Bh7gb869VWW2t8RJAmQ7uOJLPUUhAgMBAAEwDQYJKoZIhvcNAQELBQADgYEApJ0n1aSblu3TpTH0uvouVtmRhiXs3cjJ2Bn9K9ineyg5JD3tQaweV2mYhRo+ntK7gJOcA3ocsq7CwR5Y0jzY4KtFARkzAcdGK4tWIG/0vQokDXwq0/vbgwtp4x6MfDEIHqUckHgyQSDy8lLmznFHG0xhKIwdYYeYJRb2qVMwzAs=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
+<publisherIdentity name="CN=DESKTOP-RTJATDO\andrei.stan" issuerKeyHash="37554166453fabfe5c9d459c86c09b32539e023f" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>i0qSYuKVksVJlpjMw8IvK8f2K9AV5IwKJjRNzki/hIg=</DigestValue></Reference></SignedInfo><SignatureValue>evXuykU74YfhNiKXK26PnxFqXQrKwetwxSmKyeQZRgAn7WRN7/k6t3or+WLhJIea8xo74zpCGwSfBvAXOZ2fjoUuhSZiVEpMcIwtnr3rFHNN53+GaWWrNHbhnjCdnzX7O4uSdEoXWEald5duTUkEQinAHk5ktgUUtjoiJgU3Hxw=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>xzaKZimvRg535T0Hpy1D2ez4rT+d0TyP/Uhd/purGDmu55o0ve39+7OVZ0y6ZOKgdea3wqyQx/4Voyr7qv0N4kwRT3k4ZWUV/St0icDOX6rxiX171CgUz/YZSyrGfQeWFlVuXZx10mTtyxR4XnmXb7a718oFJjJx+hLazgLd3TE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="8884bf48ce4d34260a8ce415d02bf6c72b2fc2c3cc989649c59295e262924a8b" Description="" Url=""><as:assemblyIdentity name="Aplicatie_Scanner.exe" version="1.0.0.90" publicKeyToken="a122d0c8b903514e" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-RTJATDO\andrei.stan</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>qviLAC6TT2RNqua6lSzQRBarlNaYCRpASbhqOUB3aEs=</DigestValue></Reference></SignedInfo><SignatureValue>VjKSMMeVLktp9Jwyd+IBg7/oxlkHbMG+pnESEGj3gZsncekmvy3t93zuAYhoDuLefnUPJpsZB37qXc39BCGWTGhmxoxyG4b61+rBbtpIC3I+1Uqhf261RAUz9tLbEbJIOiHaXXp4MJJKz/1QSwyZ57JiAjHdYO8YyO6wizzZ344=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>xzaKZimvRg535T0Hpy1D2ez4rT+d0TyP/Uhd/purGDmu55o0ve39+7OVZ0y6ZOKgdea3wqyQx/4Voyr7qv0N4kwRT3k4ZWUV/St0icDOX6rxiX171CgUz/YZSyrGfQeWFlVuXZx10mTtyxR4XnmXb7a718oFJjJx+hLazgLd3TE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIICBTCCAW6gAwIBAgIQPPhK8/wmpZhLt5YSuNg39TANBgkqhkiG9w0BAQsFADBBMT8wPQYDVQQDHjYARABFAFMASwBUAE8AUAAtAFIAVABKAEEAVABEAE8AXABhAG4AZAByAGUAaQAuAHMAdABhAG4wHhcNMjQwMjE2MTI1OTA2WhcNMjUwMjE1MTg1OTA2WjBBMT8wPQYDVQQDHjYARABFAFMASwBUAE8AUAAtAFIAVABKAEEAVABEAE8AXABhAG4AZAByAGUAaQAuAHMAdABhAG4wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMc2imYpr0YOd+U9B6ctQ9ns+K0/ndE8j/1IXf6bqxg5rueaNL3t/fuzlWdMumTioHXmt8KskMf+FaMq+6r9DeJMEU95OGVlFf0rdInAzl+q8Yl9e9QoFM/2GUsqxn0HlhZVbl2cddJk7csUeF55l2+2u9fKBSYycfoS2s4C3d0xAgMBAAEwDQYJKoZIhvcNAQELBQADgYEAaX+2ju7sR0SNzRYU3r5WVCj9B8/rtD2xcWjzEZWMEtmIcMDXVo1XmOrA9nBfVKk5tZHQtlRMkOki6+oSKnhTQuevvoVpdGpUxLRoFCX2zkqyF+f+Qgtv1rltytEjL2aCpkz6x7GVsV4FJZdrLSnv1xlcb7ElinP8mejSRu/4/qI=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
