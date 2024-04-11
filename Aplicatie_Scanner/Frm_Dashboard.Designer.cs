@@ -315,6 +315,7 @@
             tbReceptie.Name = "tbReceptie";
             tbReceptie.Size = new Size(120, 23);
             tbReceptie.TabIndex = 48;
+            tbReceptie.TextChanged += tbReceptie_TextChanged;
             // 
             // checkBoxIntervalOrar
             // 

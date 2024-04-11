@@ -99,7 +99,7 @@ namespace Aplicatie_Scanner
                 {
 
                     DataAccess db = new DataAccess();
-                    date = db.GetDateReceptie(tbReceptie.Text);
+                    date = db.GetDateReceptie(newCalendar1.SelectionStart, newCalendar1.SelectionEnd,tbReceptie.Text);
 
                     UpdateBinding();
                     if (date.Count < 1) MessageBox.Show("Nu a fost gasit niciun produs !");
@@ -318,7 +318,7 @@ namespace Aplicatie_Scanner
                 checkBoxCalitate.Enabled = false;
                 checkBoxFurnizor.Enabled = false;
                 cbZonaSelectie.Enabled = false;
-                newCalendar1.Enabled = false;
+                newCalendar1.Enabled = true;
                 tbReceptie.Visible = true;
                 cbFurnizor.Enabled = false;
                 cbCalitate.Enabled = false;
@@ -378,13 +378,18 @@ namespace Aplicatie_Scanner
 
             DialogResult result = inputBox.ShowDialog();
             if (double.TryParse(textBox.Text, out double n))
-            input = textBox.Text;
+                input = textBox.Text;
             else
                 input = 0.ToString();
             return result;
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbReceptie_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -41,20 +41,20 @@ namespace Aplicatie_Scanner
                 return null;
             }
         }
-        public List<DateDB> GetDateReceptie(string Receptie)
+        public List<DateDB> GetDateReceptie(DateTime DataSetata1, DateTime DataSetata2, string Receptie)
         {
             try
             {
                 using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ConnStr")))
                 {
                     var output = connection.Query<DateDB>($"" +
-                        $"SELECT * FROM Depozit WHERE Numar_Receptie = '{Receptie}'" +
+                        $"SELECT * FROM Depozit WHERE Numar_Receptie = '{Receptie}' AND ( Data_Transfer BETWEEN '{DataSetata1.ToString("yyyy-MM-dd HH:mm:ss.fff")}' AND '{DataSetata2.ToString("yyyy-MM-dd HH:mm:ss.fff")}' ) " +
                         $" UNION " +
-                        $"SELECT * FROM Linie_Productie_1 WHERE Numar_Receptie = '{Receptie}'" +
+                        $"SELECT * FROM Linie_Productie_1 WHERE Numar_Receptie = '{Receptie}' AND ( Data_Transfer BETWEEN '{DataSetata1.ToString("yyyy-MM-dd HH:mm:ss.fff")}' AND '{DataSetata2.ToString("yyyy-MM-dd HH:mm:ss.fff")}' ) " +
                         $" UNION " +
-                        $"SELECT * FROM Linie_Productie_2 WHERE Numar_Receptie = '{Receptie}'" +
+                        $"SELECT * FROM Linie_Productie_2 WHERE Numar_Receptie = '{Receptie}' AND ( Data_Transfer BETWEEN '{DataSetata1.ToString("yyyy-MM-dd HH:mm:ss.fff")}' AND '{DataSetata2.ToString("yyyy-MM-dd HH:mm:ss.fff")}' ) " +
                         $" UNION " +
-                        $"SELECT * FROM Linie_Productie_3 WHERE Numar_Receptie = '{Receptie}'" +
+                        $"SELECT * FROM Linie_Productie_3 WHERE Numar_Receptie = '{Receptie}' AND ( Data_Transfer BETWEEN '{DataSetata1.ToString("yyyy-MM-dd HH:mm:ss.fff")}' AND '{DataSetata2.ToString("yyyy-MM-dd HH:mm:ss.fff")}' ) " +
                         $" ORDER BY Locatie_Actuala").ToList();
                     foreach (var i in output)
                     {
