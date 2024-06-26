@@ -48,3 +48,13 @@
 /Aplicatie_Scanner/obj/project.assets.json
 /Aplicatie_Scanner/obj/project.nuget.cache
 /Aplicatie_Scanner/obj/Debug/net6.0-windows/ref/Aplicatie_Scanner.dll
+
+*.csproj.user
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.sln.ide.als
+bin/
+obj/
+.vscode/
