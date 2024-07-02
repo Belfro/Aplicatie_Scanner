@@ -426,7 +426,7 @@ namespace Aplicatie_Scanner
                     {
                         file.WriteLine($",{line.Calitate},{line.Lungime},{line.Count.ToString()},{line.Volum_Net},{line.Volum_Brut}");
                     }
-                    file.WriteLine($",Total:,{date_raport_faptic.Count()},{Math.Round(date_raport_faptic.Select(i => i.Volum_Net).Sum(), 3)},{Math.Round(date_raport_faptic.Select(i => i.Volum_Brut).Sum(), 3)},,,,,,,");
+                    file.WriteLine($",,Total:,{date_raport_faptic.Count()},{Math.Round(date_raport_faptic.Select(i => i.Volum_Net).Sum(), 3)},{Math.Round(date_raport_faptic.Select(i => i.Volum_Brut).Sum(), 3)},,,,,,,");
                     file.WriteLine(",,,,,,,,,,,,");
                 }
 
