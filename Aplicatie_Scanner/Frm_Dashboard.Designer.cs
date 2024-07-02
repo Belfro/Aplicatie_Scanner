@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Dashboard));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             pictureBox2 = new PictureBox();
             dataGridView1 = new DataGridView();
             Data = new DataGridViewTextBoxColumn();
@@ -44,6 +44,7 @@
             Diametru_Net = new DataGridViewTextBoxColumn();
             Calitate = new DataGridViewTextBoxColumn();
             Data_Transfer = new DataGridViewTextBoxColumn();
+            Specie = new DataGridViewTextBoxColumn();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             newCalendar1 = new NewCalendar();
             Search = new Button();
@@ -60,6 +61,7 @@
             checkBoxIntervalOrar = new CheckBox();
             numericUpDownStart = new NumericUpDown();
             numericUpDownEnd = new NumericUpDown();
+            btnPrintRaportFaptic = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownStart).BeginInit();
@@ -82,28 +84,28 @@
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = Color.FromArgb(46, 51, 100);
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 7F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = SystemColors.Control;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 7F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Data, Timp, Locatie_Actuala, Furnizor, Numar_Aviz, Numar_Receptie, Numar_Bustean, Lungime, Diametru_Net, Calitate, Data_Transfer });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Data, Timp, Locatie_Actuala, Furnizor, Numar_Aviz, Numar_Receptie, Numar_Bustean, Lungime, Diametru_Net, Calitate, Data_Transfer, Specie });
             dataGridView1.GridColor = SystemColors.ControlLight;
             dataGridView1.Location = new Point(9, 12);
             dataGridView1.Margin = new Padding(0);
             dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 7F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = SystemColors.Control;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 7F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(835, 336);
             dataGridView1.TabIndex = 35;
@@ -111,63 +113,75 @@
             // 
             // Data
             // 
-            Data.FillWeight = 80F;
+            Data.FillWeight = 66.18406F;
             Data.HeaderText = "Data";
             Data.Name = "Data";
             // 
             // Timp
             // 
-            Timp.FillWeight = 80F;
+            Timp.FillWeight = 66.18406F;
             Timp.HeaderText = "Timp";
             Timp.Name = "Timp";
             // 
             // Locatie_Actuala
             // 
+            Locatie_Actuala.FillWeight = 82.73008F;
             Locatie_Actuala.HeaderText = "Locatie Actuala";
             Locatie_Actuala.Name = "Locatie_Actuala";
             // 
             // Furnizor
             // 
+            Furnizor.FillWeight = 82.73008F;
             Furnizor.HeaderText = "Furnizor";
             Furnizor.Name = "Furnizor";
             // 
             // Numar_Aviz
             // 
+            Numar_Aviz.FillWeight = 82.73008F;
             Numar_Aviz.HeaderText = "Numar Aviz";
             Numar_Aviz.Name = "Numar_Aviz";
             // 
             // Numar_Receptie
             // 
+            Numar_Receptie.FillWeight = 82.73008F;
             Numar_Receptie.HeaderText = "Numar Receptie";
             Numar_Receptie.Name = "Numar_Receptie";
             // 
             // Numar_Bustean
             // 
+            Numar_Bustean.FillWeight = 82.73008F;
             Numar_Bustean.HeaderText = "Numar Bustean";
             Numar_Bustean.Name = "Numar_Bustean";
             // 
             // Lungime
             // 
-            Lungime.FillWeight = 50F;
+            Lungime.FillWeight = 41.36504F;
             Lungime.HeaderText = "L";
             Lungime.Name = "Lungime";
             // 
             // Diametru_Net
             // 
-            Diametru_Net.FillWeight = 50F;
+            Diametru_Net.FillWeight = 41.36504F;
             Diametru_Net.HeaderText = "D";
             Diametru_Net.Name = "Diametru_Net";
             // 
             // Calitate
             // 
-            Calitate.FillWeight = 60F;
+            Calitate.FillWeight = 49.6380424F;
             Calitate.HeaderText = "Calitate";
             Calitate.Name = "Calitate";
             // 
             // Data_Transfer
             // 
+            Data_Transfer.FillWeight = 80F;
             Data_Transfer.HeaderText = "Data Transfer";
             Data_Transfer.Name = "Data_Transfer";
+            // 
+            // Specie
+            // 
+            Specie.FillWeight = 50F;
+            Specie.HeaderText = "Specie";
+            Specie.Name = "Specie";
             // 
             // backgroundWorker1
             // 
@@ -356,12 +370,30 @@
             numericUpDownEnd.TextAlign = HorizontalAlignment.Center;
             numericUpDownEnd.Value = new decimal(new int[] { 22, 0, 0, 0 });
             // 
+            // btnPrintRaportFaptic
+            // 
+            btnPrintRaportFaptic.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnPrintRaportFaptic.BackColor = Color.FromArgb(46, 51, 100);
+            btnPrintRaportFaptic.FlatAppearance.BorderColor = Color.White;
+            btnPrintRaportFaptic.FlatStyle = FlatStyle.Flat;
+            btnPrintRaportFaptic.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnPrintRaportFaptic.ForeColor = Color.White;
+            btnPrintRaportFaptic.Location = new Point(487, 523);
+            btnPrintRaportFaptic.Name = "btnPrintRaportFaptic";
+            btnPrintRaportFaptic.Size = new Size(129, 50);
+            btnPrintRaportFaptic.TabIndex = 55;
+            btnPrintRaportFaptic.Text = "Printare\r\nRaport Faptic";
+            btnPrintRaportFaptic.UseVisualStyleBackColor = false;
+            btnPrintRaportFaptic.Visible = false;
+            btnPrintRaportFaptic.Click += btnPrintRaportFaptic_Click;
+            // 
             // Frm_Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
             ClientSize = new Size(867, 574);
+            Controls.Add(btnPrintRaportFaptic);
             Controls.Add(numericUpDownEnd);
             Controls.Add(numericUpDownStart);
             Controls.Add(checkBoxIntervalOrar);
@@ -408,6 +440,9 @@
         private Button btnPrintCSV;
         private CheckBox CheckBoxReceptie;
         private TextBox tbReceptie;
+        private CheckBox checkBoxIntervalOrar;
+        private NumericUpDown numericUpDownStart;
+        private NumericUpDown numericUpDownEnd;
         private DataGridViewTextBoxColumn Data;
         private DataGridViewTextBoxColumn Timp;
         private DataGridViewTextBoxColumn Locatie_Actuala;
@@ -419,9 +454,8 @@
         private DataGridViewTextBoxColumn Diametru_Net;
         private DataGridViewTextBoxColumn Calitate;
         private DataGridViewTextBoxColumn Data_Transfer;
-        private CheckBox checkBoxIntervalOrar;
-        private NumericUpDown numericUpDownStart;
-        private NumericUpDown numericUpDownEnd;
+        private DataGridViewTextBoxColumn Specie;
+        private Button btnPrintRaportFaptic;
     }
 
 }

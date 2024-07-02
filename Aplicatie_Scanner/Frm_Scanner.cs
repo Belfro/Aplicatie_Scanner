@@ -124,19 +124,36 @@ namespace Aplicatie_Scanner
                                 lblLocatieNoua.Visible = true;
                                 btnModifica.Visible = true;
                                 ////Calcul Automat Diametru NET////
-                                if (output.FirstOrDefault().Diametru_Brut >= 42)
+                                
+                                if (output.FirstOrDefault().Specie_Bustean == "Fag")
                                 {
-                                    lblDiametruNet.Text = "Net: " + (output.FirstOrDefault().Diametru_Brut - 3).ToString();
-                                }
-                                else if (output.FirstOrDefault().Diametru_Brut > 18 && output.FirstOrDefault().Diametru_Brut < 41)
-                                {
-                                    lblDiametruNet.Text = "Net: " + (output.FirstOrDefault().Diametru_Brut - 2).ToString();
+                                    if (output.FirstOrDefault().Diametru_Brut >= 40)
+                                    {
+                                        lblDiametruNet.Text = "Net: " + (output.FirstOrDefault().Diametru_Brut - 2).ToString();
+                                    }
+                                    else
+                                    {
+                                        lblDiametruNet.Text = "Net: " + (output.FirstOrDefault().Diametru_Brut - 1).ToString();
+                                    }
+                                    tbCalitate.Text = output.FirstOrDefault().Calitate.ToString();
                                 }
                                 else
                                 {
-                                    lblDiametruNet.Text = "Net: " + (output.FirstOrDefault().Diametru_Brut).ToString();
+                                    if (output.FirstOrDefault().Diametru_Brut >= 42)
+                                    {
+                                        lblDiametruNet.Text = "Net: " + (output.FirstOrDefault().Diametru_Brut - 3).ToString();
+                                    }
+                                    else if (output.FirstOrDefault().Diametru_Brut > 18 && output.FirstOrDefault().Diametru_Brut < 41)
+                                    {
+                                        lblDiametruNet.Text = "Net: " + (output.FirstOrDefault().Diametru_Brut - 2).ToString();
+                                    }
+                                    else
+                                    {
+                                        lblDiametruNet.Text = "Net: " + (output.FirstOrDefault().Diametru_Brut).ToString();
+                                    }
+                                    tbCalitate.Text = output.FirstOrDefault().Calitate.ToString();
                                 }
-                                tbCalitate.Text = output.FirstOrDefault().Calitate.ToString();
+                               
                             }
                             connection.Close();
                         }
@@ -291,8 +308,8 @@ namespace Aplicatie_Scanner
 
 
                         cmd.CommandText = $" BEGIN TRANSACTION;" +
-                                    $"\r\nINSERT INTO {cbLocatieNoua.Text} (Data_Timp,Furnizor,Numar_Aviz,Numar_Receptie,Numar_Bustean,Lungime,Diametru_Brut,Diametru_Net,Calitate,GUID,Locatie_Actuala,Comentariu,Data_Transfer)" +
-                                    $"\r\nSELECT Data_Timp,Furnizor,Numar_Aviz,Numar_Receptie,Numar_Bustean,Lungime,Diametru_Brut,Diametru_Net,Calitate,GUID,Locatie_Actuala,Comentariu,Data_Transfer" +
+                                    $"\r\nINSERT INTO {cbLocatieNoua.Text} (Data_Timp,Furnizor,Numar_Aviz,Numar_Receptie,Numar_Bustean,Lungime,Diametru_Brut,Diametru_Net,Calitate,GUID,Locatie_Actuala,Comentariu,Data_Transfer,Specie_Bustean)" +
+                                    $"\r\nSELECT Data_Timp,Furnizor,Numar_Aviz,Numar_Receptie,Numar_Bustean,Lungime,Diametru_Brut,Diametru_Net,Calitate,GUID,Locatie_Actuala,Comentariu,Data_Transfer,Specie_Bustean" +
                                     $"\r\nFROM {tbLocatieCurenta.Text}\r\nWHERE GUID = '{ID}';" +
                                     $"\r\nDELETE FROM {tbLocatieCurenta.Text}" +
                                     $"\r\nWHERE GUID = '{ID}';\r\nCOMMIT;" +

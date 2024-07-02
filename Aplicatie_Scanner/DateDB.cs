@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Aplicatie_Scanner
 {
-    
+
     public class DateDB
     {
         public DateTime Data_Timp { get; set; }
@@ -24,6 +24,8 @@ namespace Aplicatie_Scanner
         public string Locatie_Actuala { get; set; }
         public string Comentariu { get; set; }
         public DateTime Data_Transfer { get; set; }
+        public string Specie_Bustean { get; set; }
+
         public string Doardata
         {
             get
@@ -59,7 +61,7 @@ namespace Aplicatie_Scanner
             get
             {
                 // Stringul afisat 
-                return $"{Doardata},{DoarTimp},{Furnizor},{Numar_Aviz},{Numar_Receptie},{Numar_Bustean},{Math.Round(Lungime,2)},{Diametru_Net},{Diametru_Brut},{Volum_Net},{Volum_Brut},{Calitate},{Locatie_Actuala},{Comentariu},{Data_Transfer}";
+                return $"{Doardata},{DoarTimp},{Furnizor},{Numar_Aviz},{Numar_Receptie},{Numar_Bustean},{Math.Round(Lungime,2)},{Diametru_Net},{Diametru_Brut},{Volum_Net},{Volum_Brut},{Calitate},{Locatie_Actuala},{Comentariu},{Data_Transfer},{Specie_Bustean}";
             }
         }
     }

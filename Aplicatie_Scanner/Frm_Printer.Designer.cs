@@ -62,6 +62,8 @@
             tbIndexBustean = new TextBox();
             lblIndexBustean = new Label();
             BtnIndexBustean = new Button();
+            lbSpecie = new ListBox();
+            label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
@@ -160,7 +162,7 @@
             // 
             tbDiametruBrut.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             tbDiametruBrut.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            tbDiametruBrut.Location = new Point(319, 337);
+            tbDiametruBrut.Location = new Point(512, 337);
             tbDiametruBrut.Name = "tbDiametruBrut";
             tbDiametruBrut.Size = new Size(81, 43);
             tbDiametruBrut.TabIndex = 47;
@@ -175,7 +177,7 @@
             lblDiametru.Cursor = Cursors.No;
             lblDiametru.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             lblDiametru.ForeColor = Color.White;
-            lblDiametru.Location = new Point(313, 317);
+            lblDiametru.Location = new Point(506, 317);
             lblDiametru.Name = "lblDiametru";
             lblDiametru.Size = new Size(96, 17);
             lblDiametru.TabIndex = 48;
@@ -188,7 +190,7 @@
             lblCalitate.Cursor = Cursors.No;
             lblCalitate.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             lblCalitate.ForeColor = Color.White;
-            lblCalitate.Location = new Point(164, 317);
+            lblCalitate.Location = new Point(320, 317);
             lblCalitate.Name = "lblCalitate";
             lblCalitate.Size = new Size(55, 17);
             lblCalitate.TabIndex = 50;
@@ -258,7 +260,7 @@
             lblLungime.Cursor = Cursors.No;
             lblLungime.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             lblLungime.ForeColor = Color.White;
-            lblLungime.Location = new Point(15, 317);
+            lblLungime.Location = new Point(171, 317);
             lblLungime.Name = "lblLungime";
             lblLungime.Size = new Size(62, 17);
             lblLungime.TabIndex = 61;
@@ -295,7 +297,7 @@
             lbLungime.Font = new Font("Segoe UI", 17F, FontStyle.Regular, GraphicsUnit.Point);
             lbLungime.FormattingEnabled = true;
             lbLungime.ItemHeight = 31;
-            lbLungime.Location = new Point(15, 337);
+            lbLungime.Location = new Point(171, 337);
             lbLungime.Name = "lbLungime";
             lbLungime.Size = new Size(143, 190);
             lbLungime.TabIndex = 67;
@@ -336,7 +338,7 @@
             lbCalitate.Font = new Font("Segoe UI", 17F, FontStyle.Regular, GraphicsUnit.Point);
             lbCalitate.FormattingEnabled = true;
             lbCalitate.ItemHeight = 31;
-            lbCalitate.Location = new Point(164, 337);
+            lbCalitate.Location = new Point(320, 337);
             lbCalitate.Name = "lbCalitate";
             lbCalitate.Size = new Size(143, 190);
             lbCalitate.TabIndex = 72;
@@ -418,7 +420,7 @@
             // tbIndexBustean
             // 
             tbIndexBustean.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            tbIndexBustean.Location = new Point(430, 337);
+            tbIndexBustean.Location = new Point(623, 337);
             tbIndexBustean.Name = "tbIndexBustean";
             tbIndexBustean.Size = new Size(72, 43);
             tbIndexBustean.TabIndex = 79;
@@ -432,7 +434,7 @@
             lblIndexBustean.Cursor = Cursors.No;
             lblIndexBustean.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             lblIndexBustean.ForeColor = Color.White;
-            lblIndexBustean.Location = new Point(418, 317);
+            lblIndexBustean.Location = new Point(611, 317);
             lblIndexBustean.Name = "lblIndexBustean";
             lblIndexBustean.Size = new Size(99, 17);
             lblIndexBustean.TabIndex = 80;
@@ -444,7 +446,7 @@
             BtnIndexBustean.FlatStyle = FlatStyle.Flat;
             BtnIndexBustean.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             BtnIndexBustean.ForeColor = Color.White;
-            BtnIndexBustean.Location = new Point(318, 416);
+            BtnIndexBustean.Location = new Point(511, 416);
             BtnIndexBustean.Name = "BtnIndexBustean";
             BtnIndexBustean.Size = new Size(185, 111);
             BtnIndexBustean.TabIndex = 81;
@@ -453,12 +455,39 @@
             BtnIndexBustean.Visible = false;
             BtnIndexBustean.Click += BtnIndexBustean_Click;
             // 
+            // lbSpecie
+            // 
+            lbSpecie.Font = new Font("Segoe UI", 17F, FontStyle.Regular, GraphicsUnit.Point);
+            lbSpecie.FormattingEnabled = true;
+            lbSpecie.ItemHeight = 31;
+            lbSpecie.Items.AddRange(new object[] { "Plop", "Fag" });
+            lbSpecie.Location = new Point(22, 337);
+            lbSpecie.Name = "lbSpecie";
+            lbSpecie.Size = new Size(143, 190);
+            lbSpecie.TabIndex = 83;
+            // 
+            // label6
+            // 
+            label6.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label6.AutoSize = true;
+            label6.Cursor = Cursors.No;
+            label6.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(22, 317);
+            label6.Name = "label6";
+            label6.Size = new Size(100, 17);
+            label6.TabIndex = 82;
+            label6.Text = "Specie Bustean";
+            label6.Click += label6_Click_1;
+            // 
             // Frm_Printer
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
             ClientSize = new Size(867, 574);
+            Controls.Add(lbSpecie);
+            Controls.Add(label6);
             Controls.Add(BtnIndexBustean);
             Controls.Add(lblIndexBustean);
             Controls.Add(tbIndexBustean);
@@ -536,5 +565,7 @@
         private TextBox tbIndexBustean;
         private Label lblIndexBustean;
         private Button BtnIndexBustean;
+        private ListBox lbSpecie;
+        private Label label6;
     }
 }

@@ -26,13 +26,14 @@ namespace Aplicatie_Scanner
 
         List<DateDB> date = new List<DateDB>();
 
-
+        List<DateDB> date_raport_faptic = new List<DateDB>();
 
 
         private void Frm_Dashboard_Load(object sender, EventArgs e)
         {
             SetcalendarToDefault();
             cbZonaSelectie.SelectedIndex = 0;
+            
         }
 
 
@@ -99,7 +100,7 @@ namespace Aplicatie_Scanner
                 {
 
                     DataAccess db = new DataAccess();
-                    date = db.GetDateReceptie(newCalendar1.SelectionStart, newCalendar1.SelectionEnd,tbReceptie.Text);
+                    date = db.GetDateReceptie(newCalendar1.SelectionStart, newCalendar1.SelectionEnd, tbReceptie.Text);
 
                     UpdateBinding();
                     if (date.Count < 1) MessageBox.Show("Nu a fost gasit niciun produs !");
@@ -135,6 +136,7 @@ namespace Aplicatie_Scanner
                 dataGridView1.Columns["Diametru_Net"].DataPropertyName = "Diametru_Brut";
                 dataGridView1.Columns["Calitate"].DataPropertyName = "Calitate";
                 dataGridView1.Columns["Data_Transfer"].DataPropertyName = "Data_Transfer";
+                dataGridView1.Columns["Specie"].DataPropertyName = "Specie";
             }
             catch (Exception ex)
             {
@@ -273,7 +275,7 @@ namespace Aplicatie_Scanner
             {
                 if (CheckBoxReceptie.Checked) file.WriteLine($"Numar Receptie,{tbReceptie.Text},,,,,,,,,,,");
 
-                file.WriteLine("Data,Ora,Furnizor,Numar Aviz,Numar Receptie,Numar Bustean,Lungime,Diametru Net,Diametru Brut,Volum Net,Volum Brut,Calitate,Locatie Actuala,Comentariu,Data Transfer");
+                file.WriteLine("Data,Ora,Furnizor,Numar Aviz,Numar Receptie,Numar Bustean,Lungime,Diametru Net,Diametru Brut,Volum Net,Volum Brut,Calitate,Locatie Actuala,Comentariu,Data Transfer,Specie_Bustean");
                 foreach (var arr in date)
                 {
                     file.WriteLine(string.Join(",", arr.FullString));
@@ -391,6 +393,49 @@ namespace Aplicatie_Scanner
 
         private void tbReceptie_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnPrintRaportFaptic_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataAccess db = new DataAccess();
+
+                date_raport_faptic = db.GetDateRaportFaptic();
+
+                string subPath = @$"C:\Azel\Raportari Romply\Rapoarte Depozit";
+
+                bool exists = System.IO.Directory.Exists(subPath);
+
+                if (!exists)
+                    System.IO.Directory.CreateDirectory(subPath);
+                using (StreamWriter file = File.CreateText(@$"C:\Azel\Raportari Romply\Raport_Depozit_{DateTime.Now.ToString("yyyy-MM-dd_HH-mm")}.csv"))
+                {
+                    file.WriteLine("Calitate,Lungime,Numar Bucati,Volum Net,Volum Brut,,,,,,,");
+                    foreach (var line in date_raport_faptic.GroupBy(info => new { info.Lungime, info.Calitate })
+                            .Select(group => new
+                            {
+                                Calitate = group.Key.Calitate,
+                                Lungime = group.Key.Lungime,
+                                Count = group.Count(),
+                                Volum_Net = group.Sum(i => i.Volum_Net).ToString(),
+                                Volum_Brut = group.Sum(i => i.Volum_Brut).ToString(),
+                            })
+                            .OrderBy(x => x.Calitate))
+                    {
+                        file.WriteLine($",{line.Calitate},{line.Lungime},{line.Count.ToString()},{line.Volum_Net},{line.Volum_Brut}");
+                    }
+                    file.WriteLine($",,Total:,{date_raport_faptic.Count()},{Math.Round(date_raport_faptic.Select(i => i.Volum_Net).Sum(), 3)},{Math.Round(date_raport_faptic.Select(i => i.Volum_Brut).Sum(), 3)},,,,,,,");
+                    file.WriteLine(",,,,,,,,,,,,");
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString());
+            }
 
         }
     }

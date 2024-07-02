@@ -105,23 +105,40 @@ namespace Aplicatie_Scanner
 
         }
 
-        private double Calcul_Diametru_Net(double diametru)
+        private double Calcul_Diametru_Net(double diametru, string Specie)
         {
-            double output = 0;
             ////Calcul Automat Diametru NET////
-            if (diametru > 70)
+            double output = 0;
+            if (Specie == "Fag")
             {
-                output = diametru - 4;
+                
+                if (diametru >= 40 )
+                {
+                    output = diametru - 2;
+                }
+                else if (diametru < 40)
+                {
+                    output = diametru - 1;
+                }
+                return output;
             }
-            else if (diametru >= 40 && diametru <= 70)
+            else
             {
-                output = diametru - 3;
+                if (diametru > 70)
+                {
+                    output = diametru - 4;
+                }
+                else if (diametru >= 40 && diametru <= 70)
+                {
+                    output = diametru - 3;
+                }
+                else if (diametru < 40)
+                {
+                    output = diametru - 2;
+                }
+                return output;
             }
-            else if (diametru < 40)
-            {
-                output = diametru - 2;
-            }
-            return output;
+           
         }
         private void Imprimare()
         {
@@ -146,7 +163,7 @@ namespace Aplicatie_Scanner
                 + "','"
                 + tbDiametruBrut.Text
                 + "','"
-                + Calcul_Diametru_Net(Convert.ToDouble(tbDiametruBrut.Text)).ToString()
+                + Calcul_Diametru_Net(Convert.ToDouble(tbDiametruBrut.Text), lbSpecie.Text).ToString()
                 + "','"
                 + lbCalitate.Text
                 + "','"
@@ -157,6 +174,8 @@ namespace Aplicatie_Scanner
                 + rtbComentariu.Text
                 + "','"
                 + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")
+                + "','"
+                + lbSpecie.Text
                 + "');";
 
 
@@ -542,6 +561,7 @@ eJztVLFu2zAUPNIWIAiGSgHSTnAijADpaGhoGaAfoMH6H0JZBA/9BkKT4QKZjQ5xP0VjkCljkSV9pNXY
             {
                 lblReceptiePornita.Text = "Receptie Pornita!";
                 tbIndexBustean.Text = "1";
+                lbSpecie.SelectedIndex = 0;
                 lblReceptiePornita.ForeColor = Color.Lime;
                 cbFurnizor.Enabled = false;
                 tbNrAviz.Enabled = false;
@@ -627,6 +647,11 @@ eJztVLFu2zAUPNIWIAiGSgHSTnAijADpaGhoGaAfoMH6H0JZBA/9BkKT4QKZjQ5xP0VjkCljkSV9pNXY
             {
                 e.Handled = true;
             }
+        }
+
+        private void label6_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
