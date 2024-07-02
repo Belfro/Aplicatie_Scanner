@@ -412,6 +412,15 @@ namespace Aplicatie_Scanner
                     System.IO.Directory.CreateDirectory(subPath);
                 using (StreamWriter file = File.CreateText(@$"C:\Azel\Raportari Romply\Rapoarte Depozit\Raport_Depozit_{DateTime.Now.ToString("yyyy-MM-dd_HH-mm")}.csv"))
                 {
+                    file.WriteLine("Data,Ora,Furnizor,Numar Aviz,Numar Receptie,Numar Bustean,Lungime,Diametru Net,Diametru Brut,Volum Net,Volum Brut,Calitate,Locatie Actuala");
+
+                    foreach (var arr in date_raport_faptic)
+                    {
+                        file.WriteLine(string.Join(",", arr.FullString_Raport_Faptic));
+                    }
+                    file.WriteLine(",,,,,");
+                    file.WriteLine(",,,,,");
+
                     file.WriteLine(",Calitate,Lungime,Numar Bucati,Volum Net,Volum Brut,,,,,,,");
                     foreach (var line in date_raport_faptic.GroupBy(info => new { info.Lungime, info.Calitate })
                             .Select(group => new
