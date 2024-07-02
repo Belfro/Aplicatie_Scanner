@@ -412,7 +412,7 @@ namespace Aplicatie_Scanner
                     System.IO.Directory.CreateDirectory(subPath);
                 using (StreamWriter file = File.CreateText(@$"C:\Azel\Raportari Romply\Rapoarte Depozit\Raport_Depozit_{DateTime.Now.ToString("yyyy-MM-dd_HH-mm")}.csv"))
                 {
-                    file.WriteLine("Calitate,Lungime,Numar Bucati,Volum Net,Volum Brut,,,,,,,");
+                    file.WriteLine(",Calitate,Lungime,Numar Bucati,Volum Net,Volum Brut,,,,,,,");
                     foreach (var line in date_raport_faptic.GroupBy(info => new { info.Lungime, info.Calitate })
                             .Select(group => new
                             {
@@ -426,7 +426,7 @@ namespace Aplicatie_Scanner
                     {
                         file.WriteLine($",{line.Calitate},{line.Lungime},{line.Count.ToString()},{line.Volum_Net},{line.Volum_Brut}");
                     }
-                    file.WriteLine($",,Total:,{date_raport_faptic.Count()},{Math.Round(date_raport_faptic.Select(i => i.Volum_Net).Sum(), 3)},{Math.Round(date_raport_faptic.Select(i => i.Volum_Brut).Sum(), 3)},,,,,,,");
+                    file.WriteLine($",Total:,{date_raport_faptic.Count()},{Math.Round(date_raport_faptic.Select(i => i.Volum_Net).Sum(), 3)},{Math.Round(date_raport_faptic.Select(i => i.Volum_Brut).Sum(), 3)},,,,,,,");
                     file.WriteLine(",,,,,,,,,,,,");
                 }
 
