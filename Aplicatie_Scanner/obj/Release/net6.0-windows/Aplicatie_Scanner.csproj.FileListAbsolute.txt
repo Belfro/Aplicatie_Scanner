@@ -213,3 +213,7 @@ C:\AS\Work\Romply\Aplicatie Scanner\Aplicatie_Scanner\Aplicatie_Scanner\bin\Rele
 C:\AS\Work\Romply\Aplicatie Scanner\Aplicatie_Scanner\Aplicatie_Scanner\bin\Release\net6.0-windows\Aplicatie_Scanner.application
 C:\AS\Work\Romply\Aplicatie Scanner\Aplicatie_Scanner\Aplicatie_Scanner\obj\Release\net6.0-windows\Aplicatie_Scanner.dll.manifest
 C:\AS\Work\Romply\Aplicatie Scanner\Aplicatie_Scanner\Aplicatie_Scanner\obj\Release\net6.0-windows\Aplicatie_Scanner.application
+C:\AS\Work\Aplicatie_Scanner\Aplicatie_Scanner\bin\Release\net6.0-windows\Aplicatie_Scanner.dll.manifest
+C:\AS\Work\Aplicatie_Scanner\Aplicatie_Scanner\bin\Release\net6.0-windows\Aplicatie_Scanner.application
+C:\AS\Work\Aplicatie_Scanner\Aplicatie_Scanner\obj\Release\net6.0-windows\Aplicatie_Scanner.dll.manifest
+C:\AS\Work\Aplicatie_Scanner\Aplicatie_Scanner\obj\Release\net6.0-windows\Aplicatie_Scanner.application
