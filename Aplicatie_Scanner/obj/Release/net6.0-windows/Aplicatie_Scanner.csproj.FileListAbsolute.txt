@@ -67,10 +67,6 @@ C:\AS\Work\Aplicatie_Scanner\Aplicatie_Scanner\obj\Release\net6.0-windows\refint
 C:\AS\Work\Aplicatie_Scanner\Aplicatie_Scanner\obj\Release\net6.0-windows\Aplicatie_Scanner.pdb
 C:\AS\Work\Aplicatie_Scanner\Aplicatie_Scanner\obj\Release\net6.0-windows\Aplicatie_Scanner.genruntimeconfig.cache
 C:\AS\Work\Aplicatie_Scanner\Aplicatie_Scanner\obj\Release\net6.0-windows\ref\Aplicatie_Scanner.dll
-C:\AS\Work\Aplicatie_Scanner\Aplicatie_Scanner\bin\Release\net6.0-windows\Aplicatie_Scanner.dll.manifest
-C:\AS\Work\Aplicatie_Scanner\Aplicatie_Scanner\bin\Release\net6.0-windows\Aplicatie_Scanner.application
-C:\AS\Work\Aplicatie_Scanner\Aplicatie_Scanner\obj\Release\net6.0-windows\Aplicatie_Scanner.dll.manifest
-C:\AS\Work\Aplicatie_Scanner\Aplicatie_Scanner\obj\Release\net6.0-windows\Aplicatie_Scanner.application
 C:\Users\AndreiS\Drive\AS\Azel\Romply\Aplicatie Scanner\Aplicatie_Scanner\Aplicatie_Scanner\bin\Release\net6.0-windows\Aplicatie_Scanner.exe
 C:\Users\AndreiS\Drive\AS\Azel\Romply\Aplicatie Scanner\Aplicatie_Scanner\Aplicatie_Scanner\bin\Release\net6.0-windows\Aplicatie_Scanner.dll.config
 C:\Users\AndreiS\Drive\AS\Azel\Romply\Aplicatie Scanner\Aplicatie_Scanner\Aplicatie_Scanner\bin\Release\net6.0-windows\Aplicatie_Scanner.deps.json

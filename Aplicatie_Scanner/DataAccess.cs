@@ -164,6 +164,32 @@ namespace Aplicatie_Scanner
             }
         }
 
+        public List<DateDB> GetDateRaportDepozit()
+        {
+            try
+            {
+                using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ConnStr")))
+                {
+                    var output = connection.Query<DateDB>($"" +
+                        $"SELECT * FROM Depozit" +
+                        $" ORDER BY Data_Timp").ToList();
+
+                    foreach (var i in output)
+                    {
+                        i.Lungime = Math.Round(i.Lungime, 2);
+                    }
+
+                    return output;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error Connecting to the Database ! Error:" + ex.Message);
+                return null;
+            }
+        }
+
         internal List<DateDB> GetDate(object text)
         {
             throw new NotImplementedException();

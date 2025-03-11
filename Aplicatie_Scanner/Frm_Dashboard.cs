@@ -28,12 +28,15 @@ namespace Aplicatie_Scanner
 
         List<DateDB> date_raport_faptic = new List<DateDB>();
 
+        List<DateDB> date_raport_depozit = new List<DateDB>();
+
+
 
         private void Frm_Dashboard_Load(object sender, EventArgs e)
         {
             SetcalendarToDefault();
             cbZonaSelectie.SelectedIndex = 0;
-            
+
         }
 
 
@@ -410,7 +413,7 @@ namespace Aplicatie_Scanner
 
                 if (!exists)
                     System.IO.Directory.CreateDirectory(subPath);
-                using (StreamWriter file = File.CreateText(@$"C:\Azel\Raportari Romply\Rapoarte Depozit\Raport_Depozit_{DateTime.Now.ToString("yyyy-MM-dd_HH-mm")}.csv"))
+                using (StreamWriter file = File.CreateText(@$"C:\Azel\Raportari Romply\Rapoarte Depozit\Raport_Faptic_Depozit_{DateTime.Now.ToString("yyyy-MM-dd_HH-mm")}.csv"))
                 {
                     file.WriteLine("Data,Ora,Furnizor,Numar Aviz,Numar Receptie,Numar Bustean,Lungime,Diametru Net,Diametru Brut,Volum Net,Volum Brut,Calitate,Locatie Actuala");
 
@@ -445,6 +448,59 @@ namespace Aplicatie_Scanner
             {
                 MessageBox.Show("Error: " + ex.ToString());
             }
+
+        }
+
+        private void btnPrintRaportDepozit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataAccess db = new DataAccess();
+
+                date_raport_depozit = db.GetDateRaportDepozit();
+
+                string subPath = @$"C:\Azel\Raportari Romply\Rapoarte Depozit";
+
+                bool exists = System.IO.Directory.Exists(subPath);
+
+                if (!exists)
+                    System.IO.Directory.CreateDirectory(subPath);
+                using (StreamWriter file = File.CreateText(@$"C:\Azel\Raportari Romply\Rapoarte Depozit\Raport_Baza_Date_Depozit_{DateTime.Now.ToString("yyyy-MM-dd_HH-mm")}.csv"))
+                {
+                    file.WriteLine("Data,Ora,Furnizor,Numar Aviz,Numar Receptie,Numar Bustean,Lungime,Diametru Net,Diametru Brut,Volum Net,Volum Brut,Calitate,Locatie Actuala");
+
+                    foreach (var arr in date_raport_depozit)
+                    {
+                        file.WriteLine(string.Join(",", arr.FullString_Raport_Faptic));
+                    }
+                    file.WriteLine(",,,,,");
+                    file.WriteLine(",,,,,");
+
+                    file.WriteLine(",Calitate,Lungime,Numar Bucati,Volum Net,Volum Brut,,,,,,,");
+                    foreach (var line in date_raport_depozit.GroupBy(info => new { info.Lungime, info.Calitate })
+                            .Select(group => new
+                            {
+                                Calitate = group.Key.Calitate,
+                                Lungime = group.Key.Lungime,
+                                Count = group.Count(),
+                                Volum_Net = group.Sum(i => i.Volum_Net).ToString(),
+                                Volum_Brut = group.Sum(i => i.Volum_Brut).ToString(),
+                            })
+                            .OrderBy(x => x.Calitate))
+                    {
+                        file.WriteLine($",{line.Calitate},{line.Lungime},{line.Count.ToString()},{line.Volum_Net},{line.Volum_Brut}");
+                    }
+                    file.WriteLine($",,Total:,{date_raport_depozit.Count()},{Math.Round(date_raport_depozit.Select(i => i.Volum_Net).Sum(), 3)},{Math.Round(date_raport_depozit.Select(i => i.Volum_Brut).Sum(), 3)},,,,,,,");
+                    file.WriteLine(",,,,,,,,,,,,");
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString());
+            }
+
 
         }
     }
