@@ -503,6 +503,86 @@ namespace Aplicatie_Scanner
 
 
         }
+
+        private static DialogResult ShowInputDialogCorectare()
+        {
+            System.Drawing.Size size = new System.Drawing.Size(300, 100);
+            Form inputBox = new Form();
+
+            inputBox.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            inputBox.ClientSize = size;
+            inputBox.Text = "Atentie!";
+            inputBox.StartPosition = FormStartPosition.CenterParent;
+            inputBox.MinimizeBox = false;
+            inputBox.MaximizeBox = false;
+
+
+            System.Windows.Forms.Label textBox = new System.Windows.Forms.Label();
+            textBox.Size = new System.Drawing.Size(size.Width - 10, 40);
+            textBox.Location = new System.Drawing.Point(10, 5);
+            textBox.Text = "Aceasta operatie va suprascrie datele din depozit\r\ncu datele scanate pentru raportul faptic. Acceptati?";
+            inputBox.Controls.Add(textBox);
+
+            System.Windows.Forms.Button okButton = new System.Windows.Forms.Button();
+            okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+            okButton.Name = "okButton";
+            okButton.Size = new System.Drawing.Size(size.Width / 4, 40);
+            okButton.Text = "&Accept";
+            okButton.Location = new System.Drawing.Point(size.Width / 4-10, 60);
+            inputBox.Controls.Add(okButton);
+
+              System.Windows.Forms.Button cancelButton = new System.Windows.Forms.Button();
+              cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+              cancelButton.Name = "cancelButton";
+              cancelButton.Size = new System.Drawing.Size(size.Width / 4, 40);
+            cancelButton.Text = "&Anulare";
+              cancelButton.Location = new System.Drawing.Point(size.Width /2+10, 60);
+              inputBox.Controls.Add(cancelButton);
+
+            inputBox.AcceptButton = okButton;
+            inputBox.CancelButton = cancelButton;
+
+            DialogResult result = inputBox.ShowDialog();
+           
+            return result;
+        }
+
+        private void btnCorectareRaportDepozit_Click(object sender, EventArgs e)
+        {
+            DialogResult Rezultat;
+            Rezultat = ShowInputDialogCorectare();
+            if (Rezultat == DialogResult.OK)
+            {
+                using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ConnStr")))
+                {
+                    try
+                    {
+                        connection.Open();
+                        var cmd = connection.CreateCommand();
+
+                        
+                        cmd.CommandText = $"BEGIN TRANSACTION;" +
+                            $"\r\n\r\n DELETE FROM Depozit;" +
+                            $"\r\n\r\n INSERT INTO Depozit" +
+                            $"\r\n SELECT *" +
+                            $"\r\n FROM Raport_Depozit;" +
+                            $"\r\n\r\n COMMIT;";
+                        cmd.CommandTimeout = 15;
+                        cmd.CommandType = CommandType.Text;
+                        cmd.ExecuteNonQuery();
+
+                        connection.Close();
+                    }
+
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error:" + ex.Message);
+                    }
+                }
+
+                }
+
+            }
     }
 
 }

@@ -63,6 +63,7 @@
             numericUpDownEnd = new NumericUpDown();
             btnPrintRaportFaptic = new Button();
             btnPrintRaportDepozit = new Button();
+            btnCorectareRaportDepozit = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownStart).BeginInit();
@@ -403,12 +404,29 @@
             btnPrintRaportDepozit.UseVisualStyleBackColor = false;
             btnPrintRaportDepozit.Click += btnPrintRaportDepozit_Click;
             // 
+            // btnCorectareRaportDepozit
+            // 
+            btnCorectareRaportDepozit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnCorectareRaportDepozit.BackColor = Color.FromArgb(46, 51, 100);
+            btnCorectareRaportDepozit.FlatAppearance.BorderColor = Color.White;
+            btnCorectareRaportDepozit.FlatStyle = FlatStyle.Flat;
+            btnCorectareRaportDepozit.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCorectareRaportDepozit.ForeColor = Color.White;
+            btnCorectareRaportDepozit.Location = new Point(619, 497);
+            btnCorectareRaportDepozit.Name = "btnCorectareRaportDepozit";
+            btnCorectareRaportDepozit.Size = new Size(129, 50);
+            btnCorectareRaportDepozit.TabIndex = 57;
+            btnCorectareRaportDepozit.Text = "Corectare Raport Depozit";
+            btnCorectareRaportDepozit.UseVisualStyleBackColor = false;
+            btnCorectareRaportDepozit.Click += btnCorectareRaportDepozit_Click;
+            // 
             // Frm_Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
             ClientSize = new Size(867, 574);
+            Controls.Add(btnCorectareRaportDepozit);
             Controls.Add(btnPrintRaportDepozit);
             Controls.Add(btnPrintRaportFaptic);
             Controls.Add(numericUpDownEnd);
@@ -474,6 +492,7 @@
         private DataGridViewTextBoxColumn Specie;
         private Button btnPrintRaportFaptic;
         private Button btnPrintRaportDepozit;
+        private Button btnCorectareRaportDepozit;
     }
 
 }
