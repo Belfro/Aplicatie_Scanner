@@ -564,7 +564,7 @@ namespace Aplicatie_Scanner
                         cmd.CommandText = $"BEGIN TRANSACTION;" +
                             $"\r\n\r\n DELETE FROM Depozit;" +
                             $"\r\n\r\n INSERT INTO Depozit (Data_Timp,Furnizor,Numar_Aviz,Numar_Receptie,Numar_Bustean,Lungime,Diametru_Brut,Diametru_Net,Calitate,GUID,Locatie_Actuala,Comentariu,Data_Transfer,Specie_Bustean)" +
-                            $"\r\n SELECT (Data_Timp,Furnizor,Numar_Aviz,Numar_Receptie,Numar_Bustean,Lungime,Diametru_Brut,Diametru_Net,Calitate,GUID,Locatie_Actuala,Comentariu,Data_Transfer,Specie_Bustean)" +
+                            $"\r\n SELECT Data_Timp,Furnizor,Numar_Aviz,Numar_Receptie,Numar_Bustean,Lungime,Diametru_Brut,Diametru_Net,Calitate,GUID,Locatie_Actuala,Comentariu,Data_Transfer,Specie_Bustean" +
                             $"\r\n FROM Raport_Depozit;" +
                             $"\r\n\r\n COMMIT;";
                         cmd.CommandTimeout = 15;

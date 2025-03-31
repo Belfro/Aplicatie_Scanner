@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Aplicatie_Scanner")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e9060750e4549b9e725371da06f5ff42445ad949")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ef4079d6959f03e36675a53f75eaa76a4268823c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Aplicatie_Scanner")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Aplicatie_Scanner")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
