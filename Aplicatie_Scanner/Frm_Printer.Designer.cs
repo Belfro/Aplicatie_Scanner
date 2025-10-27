@@ -460,7 +460,7 @@
             lbSpecie.Font = new Font("Segoe UI", 17F, FontStyle.Regular, GraphicsUnit.Point);
             lbSpecie.FormattingEnabled = true;
             lbSpecie.ItemHeight = 31;
-            lbSpecie.Items.AddRange(new object[] { "Plop", "Fag" });
+            lbSpecie.Items.AddRange(new object[] { "Plop", "Fag", "Tei" });
             lbSpecie.Location = new Point(22, 337);
             lbSpecie.Name = "lbSpecie";
             lbSpecie.Size = new Size(143, 190);

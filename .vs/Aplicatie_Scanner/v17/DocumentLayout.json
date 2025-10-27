@@ -1,0 +1,201 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\AS\\Work\\Aplicatie_Scanner\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{164EE375-CF02-4FCE-A161-14964B7AF73C}|Aplicatie_Scanner\\Aplicatie_Scanner.csproj|C:\\AS\\Work\\Aplicatie_Scanner\\aplicatie_scanner\\frm_printer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{164EE375-CF02-4FCE-A161-14964B7AF73C}|Aplicatie_Scanner\\Aplicatie_Scanner.csproj|solutionrelative:aplicatie_scanner\\frm_printer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{164EE375-CF02-4FCE-A161-14964B7AF73C}|Aplicatie_Scanner\\Aplicatie_Scanner.csproj|c:\\as\\work\\aplicatie_scanner\\aplicatie_scanner\\frm_printer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{164EE375-CF02-4FCE-A161-14964B7AF73C}|Aplicatie_Scanner\\Aplicatie_Scanner.csproj|solutionrelative:aplicatie_scanner\\frm_printer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{164EE375-CF02-4FCE-A161-14964B7AF73C}|Aplicatie_Scanner\\Aplicatie_Scanner.csproj|c:\\as\\work\\aplicatie_scanner\\aplicatie_scanner\\frm_dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{164EE375-CF02-4FCE-A161-14964B7AF73C}|Aplicatie_Scanner\\Aplicatie_Scanner.csproj|solutionrelative:aplicatie_scanner\\frm_dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{164EE375-CF02-4FCE-A161-14964B7AF73C}|Aplicatie_Scanner\\Aplicatie_Scanner.csproj|C:\\AS\\Work\\Aplicatie_Scanner\\aplicatie_scanner\\frm_dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{164EE375-CF02-4FCE-A161-14964B7AF73C}|Aplicatie_Scanner\\Aplicatie_Scanner.csproj|solutionrelative:aplicatie_scanner\\frm_dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{164EE375-CF02-4FCE-A161-14964B7AF73C}|Aplicatie_Scanner\\Aplicatie_Scanner.csproj|c:\\as\\work\\aplicatie_scanner\\aplicatie_scanner\\dataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{164EE375-CF02-4FCE-A161-14964B7AF73C}|Aplicatie_Scanner\\Aplicatie_Scanner.csproj|solutionrelative:aplicatie_scanner\\dataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{164EE375-CF02-4FCE-A161-14964B7AF73C}|Aplicatie_Scanner\\Aplicatie_Scanner.csproj|c:\\as\\work\\aplicatie_scanner\\aplicatie_scanner\\frm_dashboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{164EE375-CF02-4FCE-A161-14964B7AF73C}|Aplicatie_Scanner\\Aplicatie_Scanner.csproj|solutionrelative:aplicatie_scanner\\frm_dashboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{164EE375-CF02-4FCE-A161-14964B7AF73C}|Aplicatie_Scanner\\Aplicatie_Scanner.csproj|c:\\as\\work\\aplicatie_scanner\\aplicatie_scanner\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{164EE375-CF02-4FCE-A161-14964B7AF73C}|Aplicatie_Scanner\\Aplicatie_Scanner.csproj|solutionrelative:aplicatie_scanner\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{164EE375-CF02-4FCE-A161-14964B7AF73C}|Aplicatie_Scanner\\Aplicatie_Scanner.csproj|C:\\AS\\Work\\Aplicatie_Scanner\\aplicatie_scanner\\frm_scanner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{164EE375-CF02-4FCE-A161-14964B7AF73C}|Aplicatie_Scanner\\Aplicatie_Scanner.csproj|solutionrelative:aplicatie_scanner\\frm_scanner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{164EE375-CF02-4FCE-A161-14964B7AF73C}|Aplicatie_Scanner\\Aplicatie_Scanner.csproj|c:\\as\\work\\aplicatie_scanner\\aplicatie_scanner\\datedb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{164EE375-CF02-4FCE-A161-14964B7AF73C}|Aplicatie_Scanner\\Aplicatie_Scanner.csproj|solutionrelative:aplicatie_scanner\\datedb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 15,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\AS\\Work\\Aplicatie_Scanner\\Aplicatie_Scanner\\App.config",
+              "RelativeDocumentMoniker": "Aplicatie_Scanner\\App.config",
+              "ToolTip": "C:\\AS\\Work\\Aplicatie_Scanner\\Aplicatie_Scanner\\App.config",
+              "RelativeToolTip": "Aplicatie_Scanner\\App.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-03-23T18:27:11.654Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Frm_Dashboard.Designer.cs",
+              "DocumentMoniker": "C:\\AS\\Work\\Aplicatie_Scanner\\Aplicatie_Scanner\\Frm_Dashboard.Designer.cs",
+              "RelativeDocumentMoniker": "Aplicatie_Scanner\\Frm_Dashboard.Designer.cs",
+              "ToolTip": "C:\\AS\\Work\\Aplicatie_Scanner\\Aplicatie_Scanner\\Frm_Dashboard.Designer.cs",
+              "RelativeToolTip": "Aplicatie_Scanner\\Frm_Dashboard.Designer.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAowEIAAABJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-23T11:55:29.02Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Frm_Dashboard.cs [Design]",
+              "DocumentMoniker": "C:\\AS\\Work\\Aplicatie_Scanner\\Aplicatie_Scanner\\Frm_Dashboard.cs",
+              "RelativeDocumentMoniker": "Aplicatie_Scanner\\Frm_Dashboard.cs",
+              "ToolTip": "C:\\AS\\Work\\Aplicatie_Scanner\\Aplicatie_Scanner\\Frm_Dashboard.cs [Design]",
+              "RelativeToolTip": "Aplicatie_Scanner\\Frm_Dashboard.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T14:14:24.708Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Frm_Dashboard.cs",
+              "DocumentMoniker": "C:\\AS\\Work\\Aplicatie_Scanner\\Aplicatie_Scanner\\Frm_Dashboard.cs",
+              "RelativeDocumentMoniker": "Aplicatie_Scanner\\Frm_Dashboard.cs",
+              "ToolTip": "C:\\AS\\Work\\Aplicatie_Scanner\\Aplicatie_Scanner\\Frm_Dashboard.cs",
+              "RelativeToolTip": "Aplicatie_Scanner\\Frm_Dashboard.cs",
+              "ViewState": "AgIAACMCAAAAAAAAAAAAAD0CAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T14:14:57.502Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DataAccess.cs",
+              "DocumentMoniker": "C:\\AS\\Work\\Aplicatie_Scanner\\Aplicatie_Scanner\\DataAccess.cs",
+              "RelativeDocumentMoniker": "Aplicatie_Scanner\\DataAccess.cs",
+              "ToolTip": "C:\\AS\\Work\\Aplicatie_Scanner\\Aplicatie_Scanner\\DataAccess.cs",
+              "RelativeToolTip": "Aplicatie_Scanner\\DataAccess.cs",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAowLAAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-10T07:35:06.967Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Frm_Scanner.cs",
+              "DocumentMoniker": "C:\\AS\\Work\\Aplicatie_Scanner\\Aplicatie_Scanner\\Frm_Scanner.cs",
+              "RelativeDocumentMoniker": "Aplicatie_Scanner\\Frm_Scanner.cs",
+              "ToolTip": "C:\\AS\\Work\\Aplicatie_Scanner\\Aplicatie_Scanner\\Frm_Scanner.cs",
+              "RelativeToolTip": "Aplicatie_Scanner\\Frm_Scanner.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
+              "WhenOpened": "2024-04-10T07:35:06.964Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Frm_Printer.cs [Design]",
+              "DocumentMoniker": "C:\\AS\\Work\\Aplicatie_Scanner\\Aplicatie_Scanner\\Frm_Printer.cs",
+              "RelativeDocumentMoniker": "Aplicatie_Scanner\\Frm_Printer.cs",
+              "ToolTip": "C:\\AS\\Work\\Aplicatie_Scanner\\Aplicatie_Scanner\\Frm_Printer.cs [Design]",
+              "RelativeToolTip": "Aplicatie_Scanner\\Frm_Printer.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-10T07:35:06.962Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Frm_Printer.cs",
+              "DocumentMoniker": "C:\\AS\\Work\\Aplicatie_Scanner\\Aplicatie_Scanner\\Frm_Printer.cs",
+              "RelativeDocumentMoniker": "Aplicatie_Scanner\\Frm_Printer.cs",
+              "ToolTip": "C:\\AS\\Work\\Aplicatie_Scanner\\Aplicatie_Scanner\\Frm_Printer.cs",
+              "RelativeToolTip": "Aplicatie_Scanner\\Frm_Printer.cs",
+              "ViewState": "AgIAAH4CAAAAAAAAAAAAAI8CAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-10T07:35:06.959Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DateDB.cs",
+              "DocumentMoniker": "C:\\AS\\Work\\Aplicatie_Scanner\\Aplicatie_Scanner\\DateDB.cs",
+              "RelativeDocumentMoniker": "Aplicatie_Scanner\\DateDB.cs",
+              "ToolTip": "C:\\AS\\Work\\Aplicatie_Scanner\\Aplicatie_Scanner\\DateDB.cs",
+              "RelativeToolTip": "Aplicatie_Scanner\\DateDB.cs",
+              "ViewState": "AQIAACwAAAAAAAAAAAA6wD0AAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-10T07:35:06.966Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
